@@ -1,0 +1,28 @@
+{
+	"path": "/web/general/",
+	"scripts": {   
+		"global":[ 
+			"general.js" 
+		],   
+		"main":[  
+			"page.js"
+		]  
+	},
+    "css": {   
+		"global":[
+        	"general.css"
+    	],
+		"main":[
+        	"page.css"
+		],
+		"guide":[
+			"guide.css"		
+		]
+	},
+	"scopedScripts": {  
+		"guide":[
+			"guide.js"			
+		]
+	} 
+}
+ 

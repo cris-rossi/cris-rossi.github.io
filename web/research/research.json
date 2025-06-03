@@ -1,0 +1,12 @@
+{
+	"path": "/web/research/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"research.html"
+    	]
+	}
+}
+
+ 

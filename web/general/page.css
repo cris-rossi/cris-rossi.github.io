@@ -1,0 +1,753 @@
+:root {
+	--accent-darker-color: #187171;
+	--accent-color: #1b7e7e;
+	--negative-color: #bf0404;
+	--text-color: #222;
+	--bg-light: #f9f9f9;
+	--link-color: #1a6fb4;
+}
+
+body { 
+	margin: 0;
+	padding: 0;  
+}
+
+.mainpage-parent {
+	max-width: 960px;
+	margin: 0 auto;
+	padding:  0rem 1.5rem;
+	
+	line-height: 1.6;
+	/*font-family: sans-serif;
+	margin: 2rem;*/
+ 
+}
+
+/* Top Row Text */
+.mainpage-parent .mainpage-top-row { 
+	color: var(--accent-darker-color);
+	padding: 0.5rem;
+	text-align: center; 
+	font-size: 2.5rem;
+	line-height: 1.6;
+}
+
+
+/* ----------------------------------------------- */
+/* -------------- Table of Contents -------------- */
+/* ----------------------------------------------- */
+
+
+/*  On‑this‑page navigation */
+.mainpage-parent .on-this-page { 
+	background: var(--bg-light);
+	border-left: 3px solid var(--accent-color);
+	padding: 0.5rem 1.5rem 0.8rem 1.5rem; 
+	font-size: 0.95rem;
+	line-height: 1.2;
+	box-shadow: 2px 2px 3px rgba(0, 50, 50, .18);
+	border-radius: 5px;
+	max-width: 30%;
+}
+
+/* Header bar that says “Contents” */
+.mainpage-parent .on-this-page h2 {
+	/* typography */
+	font-size: 1.1rem;
+	font-weight: 600;
+	letter-spacing: .4px;
+	color: #fff;                         /* text colour on the bar */
+
+	/* bar appearance */
+	background: var(--accent-color);     /* pick your brand colour */
+	padding: 0.45rem 1.5rem;             /* same side-padding as nav */
+	
+	/* pull the bar out to the nav’s edges */
+	margin: -0.5rem -1.6rem 0.6rem;      /* negate nav’s top/side padding */
+	
+	/* rounded top corners only */
+	border-radius: 5px 5px 0 0;
+}
+
+
+.mainpage-parent .on-this-page ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.mainpage-parent .on-this-page li + li {
+	margin-top: .4rem;
+}
+.mainpage-parent .on-this-page a {
+	text-decoration: none;
+	color: var(--accent-darker-color);
+}
+.mainpage-parent .on-this-page a:hover {
+	text-decoration: underline;
+}
+
+
+/* Sub Sections */
+/*  Top-level (section) links — bolder */
+.mainpage-parent .on-this-page > ul > li > a {
+	font-weight: 600;
+}
+
+/*  Sub-list container — indented & subtle vertical guide */
+.mainpage-parent .on-this-page ul ul {
+	margin-top: 0.25rem;      /* a bit closer to its parent line */
+	padding-left: 1.1rem;     /* visual indent */
+	border-left: 1px solid var(--border-light, rgba(0,0,0,.12));
+}
+
+/*  Sub-items */
+.mainpage-parent .on-this-page ul ul li {
+	margin-top: 0.25rem;
+	position: relative;       /* for the pseudo-bullet below */
+}
+
+/*  Sub-item bullet (en-dash) */
+.mainpage-parent .on-this-page ul ul li::before {
+	content: "";
+	position: absolute;
+	left: -0.75rem;
+	color: var(--accent-darker-color);
+	font-weight: 700;
+}
+
+/*  Sub-level links — slightly smaller & softer */
+.mainpage-parent .on-this-page ul ul a {
+	font-size: 0.92em;
+	color: var(--accent-darker-color);
+}
+
+
+
+/* ----------------------------------------------- */
+/* ------------ Content with Sections ------------ */
+/* ----------------------------------------------- */
+
+.mainpage-parent .mainpage-content {	
+	line-height: 1.6;
+} 
+
+.mainpage-parent .mainpage-content .section-header {
+	font-size: 1.6rem;
+	font-weight: bold;
+	margin: 2.5rem 0 1rem;
+	border-bottom: 2px solid var(--accent-color);
+	padding-bottom: 0.5rem;
+}
+
+.help-page.mainpage-parent .mainpage-content .section-header:first-of-type {
+    /* specific styles for the first section header */
+	margin: 0.5rem 0 1rem;
+}
+
+.mainpage-parent .mainpage-content .section-content {
+	margin-bottom: 2rem;
+} 
+ 
+.mainpage-parent .mainpage-content .section-content .section-panel-header {
+	font-size: 1.3rem;
+	font-weight: bold;   
+	color: var(--accent-darker-color);
+	font-family: Georgia;  
+	letter-spacing: 0.5px; /* Slight spacing between characters for clarity */
+	text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */     
+	margin-top: 2rem;
+}
+
+.mainpage-parent .mainpage-content .section-content .section-panel {
+	
+}
+
+.mainpage-parent .mainpage-content .section-content .section-panel .section-panel-title {  
+	font-weight: 500; 
+	font-style: italic;
+	color: var(--accent-color);    font-size: large; 
+    text-shadow: 1px 1px 2px rgba(0, 90, 90, 0.2);
+}
+
+
+
+
+h1, h2, h3 {
+	color: #2a4a6c;
+}
+details {
+	margin-top: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	padding: 1rem;
+	background: #fff; 
+} 
+summary {
+	font-size: 1.1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+details.prerequisites:not([open]){
+	padding:0.7rem;
+	margin-top:0.5rem;			
+}
+
+details.prerequisites > summary {
+	color:  var(--accent-darker-color);
+}
+strong.prerequisites{			
+	color:  var(--accent-darker-color);
+}
+details.prerequisites:not([open]) > summary {
+	line-height: 0.1; 
+	font-size:15px; 
+}
+
+
+.section-options{
+	margin-top: 2rem;     			
+}
+
+
+
+
+/* ----------------------------------------------- */
+/* --------------------- Lists ------------------- */
+/* ----------------------------------------------- */
+/* Short items lists */
+.list-shortitems li::marker {
+	color: var(--accent-color);
+} 
+
+/* Long items lists */
+.mainpage-parent .mainpage-content .section-content .list-longitems,
+.mainpage-parent .mainpage-content .section-content .list-arrows{
+	list-style: none; /* remove default bullets */
+}
+.mainpage-parent .mainpage-content .section-content .list-longitems  {
+	padding-left: 1.2em; /* removes left indentation */	
+}
+
+.mainpage-parent .mainpage-content .section-content .list-longitems > li::before,
+.mainpage-parent .mainpage-content .section-content .list-arrows > li::before{
+	content: "➤"; /* custom bullet */
+	position: absolute;
+	margin-left: -1.2em;
+	color: var(--accent-color, #1b7e7e); /* picks color for bullet */
+}
+
+.mainpage-parent .mainpage-content .section-content .list-longitems > li {
+	position: relative;
+	margin-bottom: 1.2em; /* space between points */
+	line-height: 1.4; /* line spacing within each point */
+}
+
+.mainpage-parent .mainpage-content .section-content .list-longitems > li p,
+.mainpage-parent .mainpage-content .section-content .list-longitems > li strong {
+	margin: 0; /* prevent extra spacing from tags */
+}
+
+/* Vertical space between consecutive <li> */
+li + li {
+	margin-top: 0.5rem;        
+}
+/*  Different space when the *preceding* <li> already ends with an image  */
+li:has(> img:last-child) + li {
+	margin-top: 1rem;      
+}
+
+ol.list-lessindent,
+ul.list-lessindent {   /* list */ 
+	padding-left: 1.5rem;  
+}
+
+
+ul.note-text{
+	list-style: none;
+	padding-left: 0;	
+}
+.note-text li::before {
+	content: "❋"; 
+	margin-right: 8px;
+}
+
+
+ul.list-asterisks,
+li.list-asterisks {
+	list-style: none; 
+	margin-left: -1.1em;
+}
+.list-asterisks > li::before,
+li.list-asterisks::before {
+	content: "❋";  
+} 
+
+
+
+
+
+
+/* ----------------------------------------------- */
+/* ------------- Shared Image Styles  ------------ */
+/* ----------------------------------------------- */
+ 
+.mainpage-parent .mainpage-content .section-content .image-row{
+	display: flex;			/* put the four images on one line        */
+	justify-content: space-between;	/* spread any leftover width equally    */ 
+	gap: 1.5rem;			/*  space *between* the cards  */	
+	align-items: center; /* vertical center */
+} 
+
+.mainpage-parent .mainpage-content .section-content .image-row .inline-img { 
+	flex: 1 1 0;			/* each image gets an equal share of row */
+	min-width: 0;			/* prevents flex “overflow” weirdness    */
+
+	width: 100%;			/* fill the width it’s given by flexbox  */
+	height: auto;			/* let height scale from the width       */
+
+	object-fit: contain;		/* shrink proportionally without crop    */
+	transition: transform 0.2s ease; 
+}
+
+
+.mainpage-parent .mainpage-content .section-content .image-row .inline-img:hover {
+	transform: scale(1.05);
+}
+
+
+
+.mainpage-parent .mainpage-content .section-content .image-row .inline-text {
+	flex: 1 1 300px;			/* take the remaining width */
+} 
+
+
+/* Features Cards   */ 
+.features-grid { 
+}
+
+.features-grid .feature-card-img {
+	max-height: 50vh;		/* never taller than half the viewport   */ 
+} 
+
+
+ /*  “Why MovementVR?” side-by-side layout for image */
+.why-row {					/* wrapper around image + text */ 
+	align-items: center;	
+}
+
+.why-row .why-img { 
+	max-width: 50%; 
+} 
+ 
+
+ /* “What is MovementVR?” side-by-side layout for image */
+.what-row {					/* wrapper around image + text */ 
+	align-items: center;	
+}
+
+.what-row .what-img { 
+	max-width: 50%; 
+} 
+
+
+.inline-icon{
+	height: 1.5em;
+	vertical-align: middle;
+}
+
+
+
+
+/* --------------Image Help Guides --------------------*/
+img.instruction-screenshot {
+	display: block;
+	margin: 1rem 0 2rem 0;
+	max-width: 600px;
+	max-height: 150px;
+	height: auto;
+	border-radius: 6px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	border: 1px solid #ccc;
+	transition: transform 0.2s ease-in-out;
+}
+img.instruction-screenshot.smaller-max-width { max-width: 500px; }
+img.instruction-screenshot.smaller-max-height { max-height: 100px; }
+img.instruction-screenshot.larger-max-height  { max-height: 200px; }
+img.instruction-screenshot.largest-max-height { max-height: 300px; }
+img.instruction-screenshot.larger-max-dim  { max-width: 90%; max-height: 60vh; }
+img.instruction-screenshot.largest-max-dim  { max-width: 100%; max-height: 80vh; }
+
+
+
+
+/* --------------Image Carousels --------------------*/
+ 
+
+.carousel-container { 
+	max-height: 80vh;
+	margin: 2rem auto;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	background: #fff;
+	overflow: hidden;
+}
+/* ---------- Image Carousels (only the lines marked NEW are added/edited) ---------- */
+
+.carousel-container { /* unchanged */ }
+
+/* 1 ─ Header text automatically scales down and wraps if it doesn’t fit */
+.carousel-header { 
+	padding: .5rem 1rem;                 /*   a little extra breathing room */
+	font-size: clamp(.8rem, 1.1vw, 1rem);/*   shrinks on demand, never smaller than .8 rem */
+	font-weight: bold;
+	text-align: center;
+	
+	/* make room for multi-line text instead of forcing a fixed height */
+	min-height: 4rem;                    /*  eeps current look for short captions */
+	height: auto;                        /*   grows when needed */
+	line-height: 1.25;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow-wrap: anywhere;             /*  – lets long words break cleanly */
+}
+
+/* 2 ─ Give every slide a consistent “viewport” height */
+.carousel-image-container {	  
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+
+	height: 400px;                       /* fixed viewport height for all images */
+}
+
+.carousel-image-container img {
+	height: 100%;                        /*   always fills the viewport vertically */
+	width: auto;                         /*   preserves aspect ratio */
+	max-width: 100%;
+	object-fit: contain;
+	border-radius: 4px;
+}
+ 
+ 
+.carousel-controls {
+	background-color: #f0f0f0; 
+    text-align: center;
+    border-top: 1px solid #ddd;
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carousel-controls button {   
+    cursor: pointer;
+    padding: 0px;
+    border: none; 
+    font-size: xxx-large;
+     transition: transform 0.3s ease, color 0.3s ease;
+} 
+.carousel-controls button.next-btn:hover { 
+      transform: translateX(5px); 
+}
+.carousel-controls button.prev-btn:hover { 
+      transform: translateX(-5px); 
+}
+
+
+
+/* ----------------------------------------------- */
+/* ------------------- Links  -------------------- */
+/* ----------------------------------------------- */
+
+a {  /* link */
+	color: var(--link-color); 
+}
+
+a.img-link {  /* link */
+	display: contents; 
+}
+
+
+a.button {
+	display: inline-block;
+	padding: 0.75rem 1.25rem; 
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	margin: 0.5rem 0;
+	background-color: var(--var-col-brightcyan);
+	font-weight: bolder;
+	font-size:large;
+} 
+ 
+/* ----------------------------------------------- */
+/* ----------- General - Layout Styles  ---------- */
+/* ----------------------------------------------- */
+
+.justify { /* paragraph */
+  text-align: justify;      /* spreads the words to reach both edges */
+  text-justify: inter-word; /* preferred algorithm (works in most modern browsers) */
+}
+.center {
+  text-align: center;   /* horizontally centers each line */
+}
+
+
+/* utility: a tighter line break */
+.small-br { 
+	margin-top: 3rem;    
+}
+.smaller-br { 
+	margin-top: 1.5rem;    
+}
+.smallest-br { 
+	margin-top: 0.5rem;    
+}
+
+
+/* ----------------------------------------------- */
+/* ------------ General - Text Styles  ----------- */
+/* ----------------------------------------------- */
+
+strong {
+	color: var(--accent-color);			
+}
+
+/* Custom emphasis class for highlighted quotes */
+strong.emphasis { 
+	font-family: Georgia; 
+	font-weight: bolder;
+	letter-spacing: 0.5px; /* Slight spacing between characters for clarity */
+	text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */ 
+	color: var(--accent-color);
+/*	color:black;*/
+}
+
+.negative {  
+	font-weight: 500; 
+	font-style: italic;
+	color: var(--negative-color);
+}
+
+
+.note-text{
+	font-size: smaller;
+	font-style: italic;
+}
+
+ 
+code.larger{
+	font-size: large;
+	font-weight: bolder;
+	letter-spacing: 0.02em;
+	padding: 0 3px;
+} 
+code.larger.effect{
+	color: darkgreen;
+	text-shadow:
+		0.02px 0.02px 0 darkgreen,
+		-0.02px -0.02px 0 darkgreen;
+}
+
+.smaller{
+	font-size: smaller; 
+}
+.smaller-lineheight{ 
+	line-height: 0.9;
+}
+
+
+
+ 
+/* ----------------------------------------------- */
+/* --------------- General Styles  --------------- */
+/* ----------------------------------------------- */
+
+.temp-hidden {
+	display: none;
+}
+
+
+
+
+
+
+
+
+/*  make the whole page a two-column flex layout  */
+.mainpage-parent.help-page { 
+	display:flex; 
+	gap:2rem; 
+    max-width: fit-content;
+}
+
+.on-this-page.help-page	 {	 /* the left sidebar */ 
+	/*position: sticky;*/
+	position: static;
+    top: 4rem;
+    width: 260px;
+    min-width: 200px;
+ 
+    overflow-y: auto;
+    overflow-x: clip;
+    padding: 0.5rem 0.5rem 0.8rem 1rem;
+	
+	display: flex;
+    flex-direction: column; 
+	 
+}
+
+
+/* scroll only the list */
+.on-this-page.help-page > ul{
+    flex: 1 1 auto;          /* fill the remaining space */
+    overflow-y: auto;
+    overflow-x: clip;        /* keep your original horizontal rule */
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* keep the article column flexible */
+.mainpage-content.help-page		{ 
+	flex:1 1 0%; 
+}
+
+/* Visual hierarchy ------------------------------------------------------*/
+.on-this-page.help-page ul{ 
+	list-style:none; 
+	margin:0; 
+	padding:0;  
+}
+
+.on-this-page.help-page li{ 
+	margin:.35rem 0; 
+}
+.on-this-page.help-page a{  
+}
+
+
+.on-this-page.help-page li.active{
+	//background-color: red;
+	//color: pink; 
+	
+}
+
+.on-this-page.help-page li.active > a { 
+	font-weight:700; 
+}
+
+/* LEVEL 1 */
+.on-this-page.help-page li.active::before { 
+	content:"▸";  
+    color: var(--accent-darker-color);
+	font-size:1.75em;     /* ↑ adjust symbol size */
+	margin-right: -0.3rem;  
+	margin-left: -0.6em; 	
+	line-height:0;        /* prevents extra line-height space */ 
+	vertical-align:-0.12em; /* tiny nudge to center vertically */
+}
+
+
+/* LEVEL 2 */
+/* hide 2nd-level lists unless their parent <li> has .active  */
+.on-this-page.help-page ul ul { 
+	display:none; 
+}
+.on-this-page.help-page li.active > ul { 
+	display:block; 
+}
+
+.on-this-page.help-page li.active li.active::before { 
+	content:"▸";  
+    color: var(--accent-darker-color);   
+	font-size:1.5em;     /* ↑ adjust symbol size */ 
+	margin:0.5rem 0rem 0.5rem -0.2rem;
+	
+}
+
+
+/* LEVEL 3 */
+.on-this-page.help-page li.active li.active li.active::before { 
+	content:"▸";  
+    color: var(--accent-darker-color);  
+	font-size:1.2em;     /* ↑ adjust symbol size */ 
+	margin:0.6rem 0rem 0.5rem 0rem;
+}
+
+/* ---------------------SEARCH --------------------*/
+ 
+
+/* wrapper so search + contents sit side-by-side, each at its natural width */
+.helpPage-searchandcontents{
+    display:flex;              /* put the search bar and the <nav> next to each other */
+    flex-direction: column;
+    align-items:flex-start;
+    gap:1rem;                  /* a little space between them */  
+	
+	
+    position: sticky;                 /* STICKY */
+    top: 4rem;                        /* position offset for sticky  */
+
+    /* keep it from growing past the viewport height                     */
+    max-height: calc(100vh - 4rem);   /* header offset included   */
+    overflow: hidden;                 /* child <ul> will do the scrolling*/
+}
+
+/* SEARCH BAR ----------------------------------------------------------- */
+.help-search-container{
+    display:inline-flex;       /* keep input + button on one line */
+    align-items:center;
+    background:var(--accent-darker-color);
+   /* background:white;*/
+    border:2px solid var(--accent-darker-color);
+    border-radius:25px;
+    box-shadow:0 2px 6px rgba(0,0,0,.05); 
+    width:fit-content;         /* or 'auto' – lets the bar shrink-to-fit its contents */ 
+}
+
+.help-search-input{
+    border:0;
+    outline:0;
+    background:white;
+    width:auto;                /* keeps input only as wide as the text it holds */
+    max-width:20ch;            /* optional safety cap so it can’t grow forever */
+    padding:8px 10px;
+    border-radius:25px;      
+}
+
+.help-search-button {
+	background: none;
+	border: 0;
+	cursor: pointer;
+	padding: 6px;
+	border-radius: 4px;
+	color: white; /* Default color */
+	transition: color 0.2s ease, background-color 0.2s ease, transform 0.1s ease; 
+}
+
+.help-search-button:hover,
+.help-search-button:focus {
+	/*color: #ddd;   
+	background-color: rgba(255, 255, 255, 0.1);*/
+	transform: scale(1.05);
+}
+
+.search-icon {
+	display: inline-block;
+	vertical-align: middle;
+} 
+/*.highlight { 
+	background-color: yellow; 
+ }*/
+
+.highlight          { background: #fcf18d; padding: 0 1px; }
+.highlight.current  { background: #ffc04d; outline: 1px solid #cc7a00; }
+
+ 
+

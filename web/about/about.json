@@ -1,0 +1,12 @@
+{
+	"path": "/web/about/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"about.html"
+    	]
+	}
+}
+
+ 

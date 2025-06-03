@@ -1,0 +1,172 @@
+ 
+  :root { 	  
+	/* Width and height variables */
+	--modal-width: 90%;
+	--modal-height: 90vh;
+	  
+	/* centered vertially */
+	--modal-margin-top: calc(-5px + (100vh - var(--modal-height)) / 2);
+  }
+ 
+ 
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: snow;
+    color: #333;
+  }
+	   
+
+	  
+/* Modal background and parent */
+.helpGuide-modal.general-modal *{
+	line-height: 1;
+}
+
+.helpGuide-modal.general-modal {  
+    z-index: 1000;   
+ }
+ 
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent { 
+	width: var(--modal-width);
+	height: var(--modal-height);
+	max-height: var(--modal-height);
+	margin: var(--modal-margin-top) auto 0 auto; 
+	padding: 0px;
+	gap: 0px;
+
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+	border: 2px solid var(--var-col-darkercyan); 
+	 
+	overflow: hidden; /* prevent the whole modal from scrolling */ 
+
+}
+
+	  
+	  
+/*  ------------------   top bar  ------------------  */
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent   .helpGuide-top-bar.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--var-col-darkercyan);
+    color: white;
+    padding: 5px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;   
+	flex: 0 0 auto; 
+}	  
+
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent   .helpGuide-top-bar.top-bar .top-header {
+    font-size: 16px;
+    margin: 0;
+  }
+ 
+
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent   .helpGuide-top-bar.top-bar .search-box {
+    width: 220px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+	margin-right: 50px;
+  }
+	  
+
+
+/*  ------------------ inner content  ------------------  */
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content{
+	flex: 1 1 auto;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 8px;
+}
+	  
+	  
+	  
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content .section-header.accordion-header {
+	position: sticky;
+	top: 0; 
+	z-index: 10;  
+    padding: 5px; 
+
+    background-color: var(--var-col-darkbutton);
+    border-radius: 5px;
+	
+    text-align: left;
+    font-weight: bold;	
+	font-size: 14px;
+    color: white;
+	
+    cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+ .helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content .section-content.accordion-content {
+    display: none;
+    padding: 10px 15px;
+    background-color: var(--var-col-inputBackgroundLightGray);
+    border-radius: 5px;
+    margin: 0 8px 10px 8px;
+    text-align: left;
+  }
+
+
+
+
+/*  ------------------ general text styles definitions  ------------------  */
+
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content .highlight { 
+	background-color: yellow; 
+ }
+
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content ul, 
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content ol {
+	margin-left: 20px; 
+	text-align: left; 
+}
+
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content p { 
+	line-height: 1.4; 
+	margin: 6px 0; 
+	text-align: left; 
+}
+ 
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent .helpGuide-content.page-content strong { 
+	color: var(--var-col-darkercyan); 
+}
+ 
+	  
+
+/*  ------------------ Close Buttons  ------------------  */
+.helpGuide-modal.general-modal .helpGuide-parent.general-parent  .closeButton {
+    padding: 8px 16px;
+	width: 100px;
+    background-color: var(--var-col-darkbutton);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 20px auto;
+    transition: background-color 0.3s;
+  }
+
+  .helpGuide-modal.general-modal .helpGuide-parent.general-parent  .closeButton:hover  {
+    background-color: var(--var-col-darkercyan);
+  }
+	  
+  .helpGuide-modal.general-modal .helpGuide-parent.general-parent  .x-close {
+    color: white;
+    font-size: 22px; 
+  }
+
+  .helpGuide-modal.general-modal .helpGuide-parent.general-parent  .x-close:hover {
+    color: var(--var-col-cyan1);
+  }

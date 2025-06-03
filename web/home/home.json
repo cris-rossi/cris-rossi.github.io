@@ -1,0 +1,12 @@
+{
+	"path": "/web/home/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"home.html"
+    	]
+	}
+}
+
+ 
