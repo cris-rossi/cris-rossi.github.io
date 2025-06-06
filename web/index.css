@@ -1,7 +1,7 @@
 
 /* Style the main body  */
 body { 
-    font-size: 15px;
+  /*  font-size: 15px;*/
 } 
 
  :root{
@@ -29,19 +29,19 @@ html {
     align-items: center;  /* Center children items vertically */  
     justify-content: center; /* Center children items horizontally */
 	gap: 10px; /* Gap between children items */
-	padding: 5px 10px 5px 10px; /* top right bottom left */ 
+	padding: 5px 100px 5px 100px; /* top right bottom left */ 
 	
     border-bottom: 3px solid lightgray;    /* Adds a gray bottom border */  
 	
 	/* makes it always visible at the top */
     position: sticky;
     top: 0; 
-	background-color:#f7ffff; 
+	background-color:var(--bground-lighter);
     z-index: 10;
 }
 
 /* Style the buttons inside the top bar container container (buttons to toggle tabs) */
-.mainWindow-topRowContainer button { 
+.mainWindow-topRowContainer button.toprow-tabbutton { 
 	display: inline-block;   /* image and all buttons are in the same row */  
     cursor: pointer;    /* "clickable button" mouse cursor */ 
 	
@@ -83,10 +83,35 @@ html {
 
 /* Style the logo image at the left of the top bar container container */
 .mainWindow-topRowContainer img {  
-    display: inline-block; /* Ensure the logo container is inline */      
-	margin-right: 15px; /* Additional space between logo and tab buttons */   	
+    display: inline-block; /* Ensure the logo container is inline */       
 	height: 100%;      /* Match the container’s height */
 	width: auto;       /* Auto width to preserve aspect ratio */
+}
+
+
+
+
+.mainWindow-topRowContainer .header-namepronouns{
+    margin-right: auto;
+    line-height: 1.15; 
+	cursor: pointer;
+}
+.mainWindow-topRowContainer .header-namepronouns .header-name {
+    font-weight: 600;
+    font-size: 1.5em;
+    color: var(--emphasis-darker); 
+}
+
+.mainWindow-topRowContainer .header-namepronouns .header-pronouns {
+    font-weight: 500;
+    font-size: 0.9em;
+    color: var(--emphasis-color); 
+}
+
+.mainWindow-topRowContainer .header-namepronouns .header-pronouns .short-slash {
+	display: inline-block;
+	transform: scaleY(0.8) translateY(0.1em);
+	margin: 0 0.1em 0 0.05em;
 }
 
 /* Style of the main container with page content  */
@@ -94,7 +119,7 @@ html {
 	opacity: 0;
 	transition: opacity 0.15s ease;
 	display: none; /* Hidden by default */
-	padding: 10px 50px;
+/*	padding: 10px 50px;*/
 	width: 100%;
 }
 .mainWindow-tabContentContainer.show {

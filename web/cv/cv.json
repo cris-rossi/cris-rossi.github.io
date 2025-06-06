@@ -1,0 +1,17 @@
+{
+	"path": "/web/cv/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"cv.html"
+    	]
+	}, 
+    "css": {
+		"main":[
+        	"cv.css"
+    	]
+	}
+}
+
+ 

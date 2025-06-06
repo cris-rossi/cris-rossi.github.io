@@ -1,0 +1,12 @@
+{
+	"path": "/web/teaching/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"teaching.html"
+    	]
+	}
+}
+
+ 

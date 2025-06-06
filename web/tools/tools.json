@@ -1,0 +1,12 @@
+{
+	"path": "/web/tools/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"tools.html"
+    	]
+	}
+}
+
+ 

@@ -1,11 +1,4 @@
-:root {
-	--accent-darker-color: #187171;
-	--accent-color: #1b7e7e;
-	--negative-color: #bf0404;
-	--text-color: #222;
-	--bg-light: #f9f9f9;
-	--link-color: #1a6fb4;
-}
+ 
 
 body { 
 	margin: 0;
@@ -25,13 +18,87 @@ body {
 
 /* Top Row Text */
 .mainpage-parent .mainpage-top-row { 
-	color: var(--accent-darker-color);
-	padding: 0.5rem;
+	/*width: 100%;*/
+	color: var(--emphasis-darker);
+	font-weight: 600;
+	/*padding: 0.5rem;*/
 	text-align: center; 
 	font-size: 2.5rem;
-	line-height: 1.6;
+	line-height: 1.6; 
+	margin-top: 1.2em;
+ /*
+    flex: 0 0 100%; */
+	
+	
+	display: flex;               /* puts image and text side-by-side */
+	align-items: center;         /* vertical centering */
+	gap: 4rem;                   /* optional spacing between img & text */ 
 }
 
+.mainpage-parent .mainpage-top-row img{  
+	transition: filter 0.3s ease, box-shadow 0.3s ease;
+	height: auto;
+	
+	flex: 1 1 0;            /* grow = 1, shrink = 1, base = 0            */
+	max-width: 100%;        /* stay inside parent                        */
+	object-fit: cover;      /* trims gracefully if the row becomes short */
+	min-width: 0;           /*  lets it shrink to fit parent */
+}
+.mainpage-parent .mainpage-top-row img:hover {
+	filter: brightness(110%) saturate(120%);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.mainpage-parent .mainpage-top-row p{ 
+    margin-block-end: 0.2em;
+}
+
+ 
+
+.mainpage-top-row .toprow-namepronouns {
+	flex: 0 0 auto;         /* don't grow; use intrinsic width  */
+	text-align: center;        
+	line-height: 1.4;
+}
+
+.toprow-name {
+	white-space: nowrap;       
+}
+
+.toprow-pronouns  {
+	font-size: 0.9em;          
+}
+
+
+
+/* ----------------------------------------------- */
+/* ----------------- Alert Banner ---------------- */
+/* ----------------------------------------------- */
+
+.mainpage-parent .across-page-banner {
+	text-align: justify;
+    text-justify: inter-word;
+    padding: 7px 20px;
+    background-color: var(--bground-color);
+    color: var(--emphasis-darkest);
+    border: 2px solid var(--emphasis-color);
+    border-radius: 12px;
+    font-weight: 600; 
+    line-height: 1.4;
+    font-size: 15px;
+    margin-top: 1.5em;
+} 
+
+
+.mainpage-parent .across-page-banner  a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+.mainpage-parent .across-page-banner  a:hover,
+.mainpage-parent .across-page-banner  a:focus {
+  color: var(--link-hover);
+  text-decoration: none;
+}
 
 /* ----------------------------------------------- */
 /* -------------- Table of Contents -------------- */
@@ -40,8 +107,8 @@ body {
 
 /*  On‑this‑page navigation */
 .mainpage-parent .on-this-page { 
-	background: var(--bg-light);
-	border-left: 3px solid var(--accent-color);
+	background: var(--bground-lightest);
+	border-left: 3px solid var(--emphasis-color);
 	padding: 0.5rem 1.5rem 0.8rem 1.5rem; 
 	font-size: 0.95rem;
 	line-height: 1.2;
@@ -59,7 +126,7 @@ body {
 	color: #fff;                         /* text colour on the bar */
 
 	/* bar appearance */
-	background: var(--accent-color);     /* pick your brand colour */
+	background: var(--emphasis-color);     /* pick your brand colour */
 	padding: 0.45rem 1.5rem;             /* same side-padding as nav */
 	
 	/* pull the bar out to the nav’s edges */
@@ -80,7 +147,7 @@ body {
 }
 .mainpage-parent .on-this-page a {
 	text-decoration: none;
-	color: var(--accent-darker-color);
+	color: var(--emphasis-darker);
 }
 .mainpage-parent .on-this-page a:hover {
 	text-decoration: underline;
@@ -88,12 +155,12 @@ body {
 
 
 /* Sub Sections */
-/*  Top-level (section) links — bolder */
+/*  Top-level (section) links  –  bolder */
 .mainpage-parent .on-this-page > ul > li > a {
 	font-weight: 600;
 }
 
-/*  Sub-list container — indented & subtle vertical guide */
+/*  Sub-list container  –  indented & subtle vertical guide */
 .mainpage-parent .on-this-page ul ul {
 	margin-top: 0.25rem;      /* a bit closer to its parent line */
 	padding-left: 1.1rem;     /* visual indent */
@@ -111,14 +178,14 @@ body {
 	content: "";
 	position: absolute;
 	left: -0.75rem;
-	color: var(--accent-darker-color);
+	color: var(--emphasis-darker);
 	font-weight: 700;
 }
 
-/*  Sub-level links — slightly smaller & softer */
+/*  Sub-level links  –  slightly smaller & softer */
 .mainpage-parent .on-this-page ul ul a {
 	font-size: 0.92em;
-	color: var(--accent-darker-color);
+	color: var(--emphasis-darker);
 }
 
 
@@ -127,35 +194,58 @@ body {
 /* ------------ Content with Sections ------------ */
 /* ----------------------------------------------- */
 
-.mainpage-parent .mainpage-content {	
-	line-height: 1.6;
+.mainpage-parent .mainpage-content { 
+	margin-top: 1rem;
 } 
 
 .mainpage-parent .mainpage-content .section-header {
 	font-size: 1.6rem;
 	font-weight: bold;
-	margin: 2.5rem 0 1rem;
-	border-bottom: 2px solid var(--accent-color);
+	/*margin: 0.5rem 0 1rem 0; *//* top right bottom left */ 
+	border-bottom: 2px solid var(--emphasis-color);
 	padding-bottom: 0.5rem;
 }
 
-.help-page.mainpage-parent .mainpage-content .section-header:first-of-type {
-    /* specific styles for the first section header */
-	margin: 0.5rem 0 1rem;
+/* section headers in the form of tabs  */
+.mainpage-parent .mainpage-content .tab-header {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #ddd;
+	font-size: 1.6rem;
+    margin-top: 1.5em;
+}
+.mainpage-parent .mainpage-content .section-header.tab-button  {	
+	padding-left: 1rem;
+	padding-right: 1rem;  
+	cursor: pointer;  
+}
+.mainpage-parent .mainpage-content .section-header.tab-button:not(.active) {	
+	font-weight: normal;
+	border-bottom: none;
 }
 
+/* specific styles for the first section header */ 
+.mainpage-parent .mainpage-content > .section-header:first-child { 
+	margin-top: 1.5em;
+}
+
+
 .mainpage-parent .mainpage-content .section-content {
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 } 
  
 .mainpage-parent .mainpage-content .section-content .section-panel-header {
 	font-size: 1.3rem;
 	font-weight: bold;   
-	color: var(--accent-darker-color);
+	color: var(--emphasis-darker);
 	font-family: Georgia;  
 	letter-spacing: 0.5px; /* Slight spacing between characters for clarity */
 	text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */     
-	margin-top: 2rem;
+	margin-top: 3rem;
+}
+.mainpage-parent .mainpage-content .section-content .section-panel-header:first-child { 
+	margin-top: 1em;
 }
 
 .mainpage-parent .mainpage-content .section-content .section-panel {
@@ -165,7 +255,7 @@ body {
 .mainpage-parent .mainpage-content .section-content .section-panel .section-panel-title {  
 	font-weight: 500; 
 	font-style: italic;
-	color: var(--accent-color);    font-size: large; 
+	color: var(--emphasis-color);    font-size: large; 
     text-shadow: 1px 1px 2px rgba(0, 90, 90, 0.2);
 }
 
@@ -194,10 +284,10 @@ details.prerequisites:not([open]){
 }
 
 details.prerequisites > summary {
-	color:  var(--accent-darker-color);
+	color:  var(--emphasis-darker);
 }
 strong.prerequisites{			
-	color:  var(--accent-darker-color);
+	color:  var(--emphasis-darker);
 }
 details.prerequisites:not([open]) > summary {
 	line-height: 0.1; 
@@ -217,7 +307,7 @@ details.prerequisites:not([open]) > summary {
 /* ----------------------------------------------- */
 /* Short items lists */
 .list-shortitems li::marker {
-	color: var(--accent-color);
+	color: var(--emphasis-color);
 } 
 
 /* Long items lists */
@@ -234,7 +324,7 @@ details.prerequisites:not([open]) > summary {
 	content: "➤"; /* custom bullet */
 	position: absolute;
 	margin-left: -1.2em;
-	color: var(--accent-color, #1b7e7e); /* picks color for bullet */
+	color: var(--emphasis-color); /* bullet color */
 }
 
 .mainpage-parent .mainpage-content .section-content .list-longitems > li {
@@ -284,10 +374,137 @@ li.list-asterisks::before {
 } 
 
 
+/* ----------------------------------------------- */
+/* ------------- Expandable Bubbles   ------------ */
+/* ----------------------------------------------- */
 
 
+.mainpage-parent .mainpage-content .tab-content {
+	display: none;
+}
+.mainpage-parent .mainpage-content .tab-content.active {
+	display: block;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content p.justify {
+	text-align: justify;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble {
+	flex: 0 1 45%;
+ 
+	background-color: #f9f9f9;
+	border-radius: 1rem;
+  	overflow: hidden;  
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: all 0.4s ease;
+	position: relative;
+	transform-origin: center; 
+} 
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.rightbubble {
+    margin-left: auto;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.expanded {
+	padding: 1.5rem;
+	position: fixed !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) scale(1.05) !important;
+	z-index: 1000;
+	width: 70vw;
+	/*max-width: 600px;*/
+	max-height: 90vh;
+	overflow-y: auto;
+	background: var(--bground-lighter);
+	border-radius: 1rem;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	animation: growBubble 0.3s ease-out;
+}
 
 
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover { 
+  position: relative;   /* lets us absolutely-position the header */
+ /* max-height: 50vh; */    /* <= your limit */
+  overflow: hidden;     /* prevents spill-over */
+}
+
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover img {
+  display: block;       /* removes default inline-gap */
+/*  max-width: 100%; */     /* never wider than the container */
+ /* max-height: 100%;  */   /* never taller than 30 vh */
+  width: auto;          /* preserve aspect-ratio */
+  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* show whole image; swap for 'cover' if you prefer cropping */ 
+	 
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover img:hover {
+	filter: brightness(115%) saturate(125%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.expanded .bubble-cover img {
+	display: none;
+}
+
+
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover .section-panel-header{
+  position: absolute;
+  bottom: 20%; left: 0;   /* sit on top of the image */
+  width: 100%;
+  padding: .5rem .75rem;
+  text-align: center;
+  color: #fff;          /* readable over the picture */
+  background: rgba(0,0,0,.45);   /* subtle dark strip; tweak or remove */
+}
+
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-content {
+	display: none;
+	margin-top: 1rem;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.expanded .bubble-content {
+	display: block;
+	animation: fadeIn 0.3s ease-in;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 1.2rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	color: #999;
+}
+.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .close-btn:hover {
+	color: #000;
+}
+
+/* @keyframes (custom name): creates a custom animation (referred to in indivudal styles above)  */
+@keyframes growBubble {
+	from {
+		transform: translate(-50%, -50%) scale(0.6);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, -50%) scale(1.05);
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
 /* ----------------------------------------------- */
 /* ------------- Shared Image Styles  ------------ */
 /* ----------------------------------------------- */
@@ -479,14 +696,31 @@ a.button {
 	text-decoration: none;
 	border-radius: 5px;
 	margin: 0.5rem 0;
-	background-color: var(--var-col-brightcyan);
+	background-color: var(--solid-bright);
 	font-weight: bolder;
 	font-size:large;
 } 
+
+a.movementvrlink{
+	color: inherit;
+}
+a.movementvrlink:hover{ 
+	text-shadow: 0.1px 0 darkcyan, -0.1px 0 darkcyan;
+}
  
 /* ----------------------------------------------- */
 /* ----------- General - Layout Styles  ---------- */
 /* ----------------------------------------------- */
+p.justify{
+	color: 	var(--text-color); 
+	font-size: 16px;
+	line-height: 2em;   
+    margin-block-start: 1.25em;
+    margin-block-end: 1.75em;
+}
+p.justify.small-bottom-margin{ /*do not change - it mimicks continuation (end-start margin block)*/ 
+    margin-block-end: 0.5em;	
+}
 
 .justify { /* paragraph */
   text-align: justify;      /* spreads the words to reach both edges */
@@ -514,17 +748,17 @@ a.button {
 /* ----------------------------------------------- */
 
 strong {
-	color: var(--accent-color);			
+	color: var(--emphasis-color);			
 }
 
 /* Custom emphasis class for highlighted quotes */
 strong.emphasis { 
-	font-family: Georgia; 
-	font-weight: bolder;
-	letter-spacing: 0.5px; /* Slight spacing between characters for clarity */
-	text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */ 
-	color: var(--accent-color);
-/*	color:black;*/
+	/*font-family: Georgia; 
+	font-size: 16px;*/
+	font-weight:600;
+	letter-spacing: 0px; /* Slight spacing between characters for clarity */
+	/*text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1); */ /* Soft shadow for depth */ 
+	color: var(--emphasis-color); 
 }
 
 .negative {  
@@ -576,110 +810,7 @@ code.larger.effect{
 
 
 
-
-
-/*  make the whole page a two-column flex layout  */
-.mainpage-parent.help-page { 
-	display:flex; 
-	gap:2rem; 
-    max-width: fit-content;
-}
-
-.on-this-page.help-page	 {	 /* the left sidebar */ 
-	/*position: sticky;*/
-	position: static;
-    top: 4rem;
-    width: 260px;
-    min-width: 200px;
  
-    overflow-y: auto;
-    overflow-x: clip;
-    padding: 0.5rem 0.5rem 0.8rem 1rem;
-	
-	display: flex;
-    flex-direction: column; 
-	 
-}
-
-
-/* scroll only the list */
-.on-this-page.help-page > ul{
-    flex: 1 1 auto;          /* fill the remaining space */
-    overflow-y: auto;
-    overflow-x: clip;        /* keep your original horizontal rule */
-    margin: 0;
-    padding: 0;
-}
-
-
-
-/* keep the article column flexible */
-.mainpage-content.help-page		{ 
-	flex:1 1 0%; 
-}
-
-/* Visual hierarchy ------------------------------------------------------*/
-.on-this-page.help-page ul{ 
-	list-style:none; 
-	margin:0; 
-	padding:0;  
-}
-
-.on-this-page.help-page li{ 
-	margin:.35rem 0; 
-}
-.on-this-page.help-page a{  
-}
-
-
-.on-this-page.help-page li.active{
-	//background-color: red;
-	//color: pink; 
-	
-}
-
-.on-this-page.help-page li.active > a { 
-	font-weight:700; 
-}
-
-/* LEVEL 1 */
-.on-this-page.help-page li.active::before { 
-	content:"▸";  
-    color: var(--accent-darker-color);
-	font-size:1.75em;     /* ↑ adjust symbol size */
-	margin-right: -0.3rem;  
-	margin-left: -0.6em; 	
-	line-height:0;        /* prevents extra line-height space */ 
-	vertical-align:-0.12em; /* tiny nudge to center vertically */
-}
-
-
-/* LEVEL 2 */
-/* hide 2nd-level lists unless their parent <li> has .active  */
-.on-this-page.help-page ul ul { 
-	display:none; 
-}
-.on-this-page.help-page li.active > ul { 
-	display:block; 
-}
-
-.on-this-page.help-page li.active li.active::before { 
-	content:"▸";  
-    color: var(--accent-darker-color);   
-	font-size:1.5em;     /* ↑ adjust symbol size */ 
-	margin:0.5rem 0rem 0.5rem -0.2rem;
-	
-}
-
-
-/* LEVEL 3 */
-.on-this-page.help-page li.active li.active li.active::before { 
-	content:"▸";  
-    color: var(--accent-darker-color);  
-	font-size:1.2em;     /* ↑ adjust symbol size */ 
-	margin:0.6rem 0rem 0.5rem 0rem;
-}
-
 /* ---------------------SEARCH --------------------*/
  
 
@@ -703,9 +834,9 @@ code.larger.effect{
 .help-search-container{
     display:inline-flex;       /* keep input + button on one line */
     align-items:center;
-    background:var(--accent-darker-color);
+    background:var(--emphasis-darker);
    /* background:white;*/
-    border:2px solid var(--accent-darker-color);
+    border:2px solid var(--emphasis-darker);
     border-radius:25px;
     box-shadow:0 2px 6px rgba(0,0,0,.05); 
     width:fit-content;         /* or 'auto' – lets the bar shrink-to-fit its contents */ 

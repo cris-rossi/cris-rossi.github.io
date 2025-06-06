@@ -6,6 +6,11 @@
 		"main":[
         	"research.html"
     	]
+	}, 
+    "css": {
+		"main":[
+        	"research.css"
+    	]
 	}
 }
 

@@ -8,8 +8,9 @@ const mainWindowTabDefinition = [
     { buttonText: 'HOME', htmlFileName: 'home', tooltip: '' }, 
     { buttonText: 'ABOUT ME', htmlFileName: 'about', tooltip: '' }, 
     { buttonText: 'RESEARCH', htmlFileName: 'research', tooltip: '' }, 
+    { buttonText: 'TOOLS', htmlFileName: 'tools', tooltip: '' }, 
     { buttonText: 'TEACHING', htmlFileName: 'teaching', tooltip: '' }, 
-    { buttonText: 'CONTACT', htmlFileName: 'contact', tooltip: '' }, 
+    { buttonText: 'CV', htmlFileName: 'cv', tooltip: '' }, 
 ];
   
  /*   { buttonText: 'LEARN', htmlFileName: 'help', tooltip: 'Instructions and Guides'  }*/
@@ -74,11 +75,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 		const logoImg = document.createElement('img');
 		logoImg.src = '/web/img/headshot.jpg'; 
 		mainWindowTopRowContainer.appendChild(logoImg); 
+		
+		// Name and pronouns
+		const personalInfoElement = document.createElement('div'); 
+		personalInfoElement.className = 'header-namepronouns'; 
+		mainWindowTopRowContainer.appendChild(personalInfoElement); 
+		const nameElement = document.createElement('div');
+		nameElement.innerHTML = 'Cris Rossi, Ph.D.'; 
+		nameElement.className = 'header-name'; 
+		personalInfoElement.appendChild(nameElement); 
+		const pronounsElement = document.createElement('div');
+		//pronounsElement.innerHTML = 'they/them';/*⁄／⧸/∕*/   
+		pronounsElement.className = 'header-pronouns'; 		
+		const slash = document.createElement("span");
+		slash.className = "short-slash";
+		slash.textContent = "/";
+		pronounsElement.textContent = "they";
+		pronounsElement.appendChild(slash);
+		pronounsElement.append("them");
+		personalInfoElement.appendChild(pronounsElement);  
+		personalInfoElement.addEventListener('click', () => {
+			mainWindowClickTab("home");
+		});  
 
 		// Tab links -> creates content for each page + gets JSON references + links buttons
 		mainWindowTabDefinition.forEach(({ buttonText, htmlFileName, tooltip }) => {
 			const button = document.createElement('button');
 			button.id = htmlFileName + '_Button'; 
+			button.className = 'toprow-tabbutton'; 
 			button.title = tooltip; 
 			button.textContent = buttonText;
 			button.addEventListener('click', () => {

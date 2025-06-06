@@ -1,0 +1,12 @@
+{
+	"path": "/web/contact/",
+	"scripts": {  
+	}, 
+    "html": {
+		"main":[
+        	"contact.html"
+    	]
+	}
+}
+
+ 

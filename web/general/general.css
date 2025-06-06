@@ -1,7 +1,15 @@
 /* General styles of the body for all windows */
 body {
     margin: 0;  /* Overall margin for the main window */ 
-    font-family: Arial, sans-serif; /* Font style unless otherwise specified  */  
+    /*'Nunito', 'Poppins',*/
+	font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; 
+	 
+	/*font-style: normal;
+font-variant: normal;
+font-weight: 300;
+font-size: 20px;
+line-height: 1.67em;*/
+font-weight: 300;
 } 
 
 * {
@@ -11,14 +19,17 @@ body {
 
 /* *************  COLORS  ************* */
 :root{
-	--var-col-darkercyan:  #1b7e7e;
-	--var-col-darkbutton: darkcyan;
-	--var-col-mediumcyan:  #1f9393;
-	--var-col-brightcyan: #28bdbd;
-	--var-col-cyan2: darkturquoise;
-	--var-col-cyan1: paleturquoise;
-	--var-col-cyan0: #eeffff;
-	--var-col-inputBackgroundLightGray: #f1f1f1;
+	--text-color: #212121;
+	--emphasis-darkest: #145555;
+	--emphasis-darker: #187171;
+	--emphasis-color: #1b7e7e; 
+	--negative-color: #bf0404; 
+	--link-color: #1a6fb4;  
+	--link-hover: #125c9b;  
+	--solid-bright: #28bdbd;  
+	--bground-color: #e6f7f7;
+	--bground-lighter: #f7ffff;
+	--bground-lightest: #f9f9f9;
 }
  
 
@@ -35,190 +46,4 @@ body {
 
 
 
-
-/* *************  FRAMES  ************* */
-
-.general-iframe {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    z-index: 1000;
-}
-
-.general-iframe.help-iframe { 
-	 /* places help modal are on top of modal from which Help is clicked */
-    z-index: 1001;
-}
  
-
-
-
-
-
-/* *************  MODALS / POPUPS  ************* */
- 
-
-
-/* Modal Container */
-.general-modal {
-  display: flex; 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  align-items: center; /* vertical alignment */
-  justify-content: center; /* horizontal alignment */
-  z-index: 999;  /* bring to front */
-}
-
-
-
-/* Modal Content */
-.general-modal .modal-parent {
-  display: flex;
-  flex-direction: column;
-}
-
-/* action modals -> tighter rows (tight-space 
-like source selection in builder etc...)*/
-.action-modal *{
-	font-family: Arial, sans-serif;
-	line-height: 0.75;    
-	box-sizing: border-box;  
-	margin: 0;
-	padding: 0;    
-
-}  
-
-.general-modal.action-modal .modal-parent { 
-	margin: 0;
-	padding: 0; 
-	gap: 15px;
-	position: relative;
-	border-radius: 10px; 
-	background: #ddebe9;   
-}
-
-		
- 
-/* Close Button (Top Right Cross) */
-.general-modal .x-close {
-  align-self: flex-end;
-  position: absolute;
-  top: 7px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 27px;
-  color: var(--var-col-darkercyan); 
-  cursor: pointer;
-}
-.general-modal .x-close:hover {
-  color: var(--var-col-mediumcyan);
-}
- 
- 
-/* Modals bubble panels  */
-.general-modal .modal-panel { 
-  display: flex;
-  flex-direction: column;
-  width: 100%; 
-  border: 1.5px solid var(--var-col-darkercyan);
-  border-radius: 10px; 
-  background: white; 
-}
- 
-
-/* Title for Each Panel */
-.general-modal .modal-panel .panel-title { 
-  margin-bottom: 5px;
-  padding: 5px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  color: white;
-  background-color: var(--var-col-darkercyan);
-  border-radius:  7px 7px 0px 0px; /* top-left top-right bottom-right bottom-left*/
-  border: 1px solid var(--var-col-darkercyan);
-}
-
-/* Content for Each Panel */
-.general-modal .modal-panel .panel-content {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
-}
-
- 
- 
-/* modal buttons in panels */
-.general-modal .modal-panel .panel-content button{
-  height: 1.4em;	
-  margin-left: 5px;    
-  padding: 4px 5px;
-  background-color: var(--var-col-brightcyan);
-  border: none;
-  border-radius: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  color: white; 
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-} 
-.general-modal .modal-panel .panel-content button:hover{  
-  background-color: var(--var-col-mediumcyan);
-  border-color: var(--var-col-mediumcyan);
-}
- 
-
-/* modal buttons in footer */
-.general-modal .button-footer{
-	display: flex;
-	
-}
-
-
-.general-modal .primary-button,
-.general-modal .secondary-button{ 
-  margin: 0px auto; 
-  margin-bottom: 5px;
-  padding: 7px 12px;
-  font-size: 14px;
-  text-align: center;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;	
-} 
-
-.general-modal .primary-button{
-  color: white;
-  background-color: var(--var-col-darkercyan);	
-  border: none;
-  font-weight: bold;
-}
-.general-modal .primary-button:hover{  
-  background-color: var(--var-col-mediumcyan);
-  border-color: var(--var-col-mediumcyan);
-} 
-
-.general-modal .secondary-button{  
-	background-color: whitesmoke;
-	border-width: thin;
-}
-.general-modal .secondary-button:hover{  
-	background-color: gainsboro;
-}
- 
- 
-/* Modal Utility (Overwrite) - Hidden */
-.general-modal.hidden,
-.general-modal .hidden,
-.general-modal .template {
-  display: none !important;
-} 
