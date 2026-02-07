@@ -1,0 +1,17 @@
+/* Style of MovementVR text link   */ 
+a.movementvrlink{
+	color: inherit;
+}
+a.movementvrlink:hover{ 
+	text-shadow: 0.1px 0 darkcyan, -0.1px 0 darkcyan;
+}
+
+
+/* Row with Clickable Features Cards   */ 
+.features-grid { 
+}
+
+.features-grid .feature-card-img {
+	max-height: 50vh; /* never taller than half the viewport   */ 
+} 
+ 

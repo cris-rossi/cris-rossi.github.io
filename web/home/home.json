@@ -6,6 +6,11 @@
 		"main":[
         	"home.html"
     	]
+	}, 
+    "css": {
+		"main":[
+        	"home.css"
+    	]
 	}
 }
 

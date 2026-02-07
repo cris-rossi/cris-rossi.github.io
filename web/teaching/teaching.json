@@ -6,6 +6,11 @@
 		"main":[
         	"teaching.html"
     	]
+	}, 
+    "css": {
+		"main":[
+        	"teaching.css"
+    	]
 	}
 }
 

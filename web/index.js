@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		 // OVERALL TOP NAVIGATION MENU 
 		// Container 
 		const mainWindowTopRowContainer = document.createElement('div');
-		mainWindowTopRowContainer.className = 'mainWindow-topRowContainer';
+		mainWindowTopRowContainer.className = 'js-mainWindow-pageHeader-Container mainWindow-pageHeader-Container';
 		document.body.appendChild(mainWindowTopRowContainer);
 
 		// Logo image 
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		mainWindowTabDefinition.forEach(({ buttonText, htmlFileName, tooltip }) => {
 			const button = document.createElement('button');
 			button.id = htmlFileName + '_Button'; 
-			button.className = 'toprow-tabbutton'; 
+			button.className = 'js-mainWindow-pageHeader mainWindow-pageHeader'; 
 			button.title = tooltip; 
 			button.textContent = buttonText;
 			button.addEventListener('click', () => {
@@ -117,21 +117,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 		// (load the content of a main window tab, change tab link style)    
 		function mainWindowClickTab(clickedTab) {
 			const clickedTabID = clickedTab + '_Container';
-			const allTabContentContainers = document.querySelectorAll('.mainWindow-tabContentContainer');
+			const allTabContentContainers = document.querySelectorAll('.js-mainWindow-pageContent');
 
 			// Smoothes change of tabs
 			// this goes with css at index.css:
-			// // .mainWindow-tabContentContainer {  transition: opacity 0.2s ease; }
+			// // .js-mainWindow-pageContent {  transition: opacity 0.2s ease; }
 			allTabContentContainers.forEach(tabContent => {
 				if (tabContent.id === clickedTabID) {
-					tabContent.classList.add('show');
+					tabContent.classList.add('jscs-mainWindow-page-active');
 					setTimeout(() => {
 						tabContent.style.opacity = '1';
 					}, 10); // Let class apply before transitioning
 				} else {
 					tabContent.style.opacity = '0';
 					setTimeout(() => {
-						tabContent.classList.remove('show');
+						tabContent.classList.remove('jscs-mainWindow-page-active');
 					}, 100); // Match CSS transition duration
 				}
 			});
@@ -151,9 +151,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 			// Update button styles
 			const clickedButtonID = clickedTab + '_Button';
-			const allTabButtons = document.querySelectorAll('.mainWindow-topRowContainer button');
+			const allTabButtons = document.querySelectorAll('.js-mainWindow-pageHeader-Container button');
 			allTabButtons.forEach(button => {
-				button.classList.toggle('active', button.id === clickedButtonID);
+				button.classList.toggle('jscs-mainWindow-page-active', button.id === clickedButtonID);
 			});
 		} 
 	}
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 		function mainWindowInitializeTabContent(htmlFileName,jsonFiles){   
 			// creates tab content container   
 			const tabContentContainer = document.createElement('div');
-			tabContentContainer.className = 'mainWindow-tabContentContainer';
+			tabContentContainer.className = 'mainWindow-pageContent js-mainWindow-pageContent';
 			tabContentContainer.id = htmlFileName+'_Container';
 			document.body.appendChild(tabContentContainer);
 

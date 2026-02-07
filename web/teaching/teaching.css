@@ -1,0 +1,72 @@
+/* ----------------------------------------------- */ 
+/* --------- Teaching Evaluations Table ---------- */
+/* ----------------------------------------------- */
+/* located under about */
+
+/* Table */
+.mainpage-parent .mainpage-content .section-content .table-teacheval{
+    border-collapse: collapse; /* collapses adjacent borders --> avoids double grid lines */
+    border: none; /* outer border */    
+	margin: 1.5em auto; 
+}
+
+/* Main Table cells (th=hearder, td=data) */
+.mainpage-parent .mainpage-content .section-content .table-teacheval thead th,
+.mainpage-parent .mainpage-content .section-content .table-teacheval tbody td {
+  padding: 6px;  
+  border: 1px solid black;  /* grid lines */ 
+  text-align: center;
+}
+
+
+/* Foot Table cells */ 
+.mainpage-parent .mainpage-content .section-content .table-teacheval tfoot td {
+  padding: 6px;  
+  border: none;  /* no grid lines */
+}
+
+/* Foot Table cells --> legend */
+.mainpage-parent .mainpage-content .section-content .table-teacheval tfoot td.footnote-legend {
+	font-size: 0.85rem;
+	color: var(--text-darkgray);
+	text-align: left;
+	padding-top: 0.5em;
+    border: none;
+} 
+
+/* Foot Table cells --> Links */
+.mainpage-parent .mainpage-content .section-content .table-teacheval tfoot td.footnote-links { 
+	padding-top: 1em;
+}
+
+.mainpage-parent .mainpage-content .section-content .table-teacheval tfoot td.footnote-links .footnote-links-info {
+	font-size: 0.75rem;
+    font-style: italic;
+	/*color: var(--text-darkgray);*/ 
+}
+
+
+
+.teaching-link-note {
+    padding-left: 0.5rem; 
+	color: var(--text-darkgray);
+}
+
+.teaching-unity-link{
+    padding-right: 0.5rem;     
+}
+
+ul.teaching-resources li.teaching-link{
+    margin-top:0.6rem;
+	list-style: none;   /* removes bullets */ 
+}
+ul.teaching-resources li.teaching-link::before{
+	content: "🧠";
+	margin-right: 0.5rem;
+}
+
+
+
+
+
+ 

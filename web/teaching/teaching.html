@@ -3,121 +3,641 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cris Rossi, Ph.D. (they/them)</title> 
+    <link rel="stylesheet" href="/web/index.css"> 
     <link rel="stylesheet" href="/web/general/general.css"> 
     <link rel="stylesheet" href="/web/general/page.css"> 
+    <link rel="stylesheet" href="/web/general/interactive.css"> 
+    <link rel="stylesheet" href="/web/teaching/teaching.css"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
  	 
 </head>
+
+    
+    
 <body>
+<div id="teachingpage-parent" class="js-mainpage-parent mainpage-parent general-parent">   
 
-	<div id="teachingpage-parent" class="mainpage-parent general-parent">  
+    <div class="across-page-banner" data-content="/web/home/home" data-content-sel="across-page-banner-source">  		 
+    </div>
 
-			
-			<div class="across-page-banner" data-content="/web/home/home" data-content-sel="across-page-banner-source">  		 
+    <div id="teachingpage-content" class="mainpage-content page-content">
+        
+    <!--------------------  Page Content  ------------------>
+        <!-------------------- Tabs ------------------>
+        
+            <!-- Note: tab links work IN ORDER
+ (not by ID): first tab-sectionheader opens first js-tab-content etc...  
+Class js-tab-button is for js function --> 
+        <div class="tab-sectionheader-container">  <!--section-header--> 
+            <div class="js-tab-button tab-sectionheader section-header jscs-tab-active">About</div>
+            <div id="CoursesBtn" class="js-tab-button tab-sectionheader section-header">Courses</div>
+            <div id="UnityBtn" class="js-tab-button tab-sectionheader section-header">Unity Tutorials</div>
+            <div class="js-tab-button tab-sectionheader section-header align-right">Resources</div>
+        </div>
+          
+        <!--------------------  Tabs Content  ------------------>  
+     
+<!--  ********* TAB 1 ********* -->  
+            
+        <!-- ABOUT -->
+        <div class="js-tab-content tab-sectioncontent section-content jscs-tab-active"> 
+                
+            <!-- Text Paragraph -->
+            <p class="justify">
+                I am committed to fostering a <strong class="emphasis">collaborative, student-centered, and active classroom culture</strong> designed to ensure that even the most complex subjects are accessible to all. I prioritize a <strong class="emphasis">"learning-by-doing"</strong> approach rooted in <strong class="emphasis">evidence-based teaching practices</strong> and supported by <strong class="emphasis">formal pedagogical training</strong>. 
+            </p>
+            
+            <p class="justify">
+                Whether through immersive laboratory work or structured classroom problem-solving, I translate high-level theory into <strong class="emphasis">accessible & practical knowledge</strong>.
+                By breaking down complex, interdisciplinary concepts into manageable, engaging lessons, I empower students from <strong class="emphasis">diverse backgrounds</strong> to build <strong class="emphasis">confidence with advanced material</strong>.  
+            </p>  
+
+
+            <!-- Text Paragraph -->
+            <p class="justify">
+                As the <strong class="emphasis">Lead Instructor</strong> for multiple courses at <strong class="emphasis">Johns Hopkins University</strong>, my <strong class="emphasis">instructional ratings</strong> consistently <strong class="emphasis">exceeded both Departmental and School-wide averages</strong>, with <strong class="emphasis">98% of students</strong> rating my teaching effectiveness as <strong class="emphasis">'Good' or 'Excellent'</strong> (based on available data). 
+            </p> 
+
+            <details class="accordion"> <summary class="accordion-subheader section-subheader">Teaching Evaluations</summary> 
+            
+            <table class="table-teacheval">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>% Excellent/Good</th>
+                  <th>% Excellent (Top Score)</th>
+                  <th>vs. Department/School</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Teaching Effectiveness</td>
+                  <td>98%</td>
+                  <td>69%</td>
+                  <td>Above Average</td>
+                </tr>
+                <tr>
+                  <td>Course Quality</td>
+                  <td>95%</td>
+                  <td>58%</td>
+                  <td>Above Average</td>
+                </tr>
+                <tr>
+                  <td>Feedback Quality</td>
+                  <td>88%</td>
+                  <td>48%</td>
+                  <td>Above Average</td>
+                </tr>
+              </tbody> 
+                
+              <tfoot>
+                <tr>
+                  <td colspan="4" class="footnote-legend">"&hairsp;%&hairsp;" represents % of students across all courses w/ available data
+                    <br>"Above Average" indicates that the mean rating exceeds both Dept & School means for all courses w/ available data<br> 
+                  </td> 
+                    
+                </tr>
+                <tr>
+                    
+                    <td colspan="4" class="footnote-links"><span class='callout-arrow'><strong class="emphasis">➥ </strong></span><a href="/web/files/teaching/RossiCourseEvaluationsCombined.pdf" target="_blank"><strong class="emphasis">Download Full Reports</strong></a> <span class="footnote-links-info emphasis"> (combined PDF)</span> &emsp; or &emsp; 
+                        <span class='callout-arrow'><strong class="emphasis">➥ </strong></span><a href="https://asen-jhu.evaluationkit.com/Login/ReportPublic?id=THo7RYxiDOgppCUb8vkY%2bPMVFDNyK2ADK0u537x%2fnZsNvzOBJJZTTNEcJihG8hqZ" target="_blank"><strong class="emphasis">View on JHU website</strong></a> <span class="footnote-links-info emphasis"> (search "Rossi Cristina")</span>
+                  </td> 
+                </tr>
+              </tfoot> 
+            </table>
+  
+                
+                
+                <!-- CAROUSEL -->
+                
+                
+
+	<div class="js-comment-carousel comment-carousel" data-autoplay-ms="4500">   <!--4500-->
+		<div class="comment-carousel-header">
+ 
+            <button class="comment-carousel-btn rotate-180" type="button" data-action="prev" aria-label="Previous comments">➜
+            </button>
+            
+			<h3 class="comment-carousel-title">Selected student comments</h3>
+            
+            <button class="comment-carousel-btn" type="button" data-action="next" aria-label="Next comments">➜
+            </button> 
+            
+		</div>
+
+		<div class="js-comment-carousel-viewport comment-carousel-viewport" tabindex="0" aria-label="Student comments carousel">
+			<div class="js-comment-carousel-track comment-carousel-track"> 
+				 
+                
+<article class="comment-bubble" title="2021 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>I have been wanting to learn how to use Unity for so long, and this course was perfectly structured to motivate students to learn by doing. It was amazing to first research a medical problem and then develop a game to treat that problem — a truly interdisciplinary class!</p>
+</article>
+
+                
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices">
+	<p>I was able to learn the basics of COMSOL and MATLAB, which is a necessity for someone who wants to go into this field.</p>
+</article> 
+            
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders S1-1/2">
+	<p>This class was great! The instructor was very friendly and open to all questions. I learnt a lot from her and really enjoyed the class content as well. I was able to pick up important skills and have a basic understanding in making my own projects now!</p>
+</article>
+                
+<article class="comment-bubble" title="2021 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>The instructor is so open and encouraging. She's my favorite part of the course.</p>
+</article>
+                
+
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices S4-2/2">
+	<p>I enjoyed the projects, such as building a prosthetic in COMSOL, analyzing data through MATLAB, and writing a scientific paper, because I felt that it was a good way to apply what we were learning.</p>
+</article>
+            
+<article class="comment-bubble" title="2020 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>It is very educational, and stimulating for someone who has never taken a class in neuroscience.</p>
+</article>
+                
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>The instructor was very helpful and vibrant. Everything was well explained and help was always given when necessary.</p>
+</article>
+            
+<article class="comment-bubble" title="2021 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders S3-2/2">
+	<p>The course covered several useful skills, such as literature search and coding, in only two weeks. There was also lots of room for creativity on the final project.</p>
+</article>
+                
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices S2-1/2">
+	<p>This course combines several different subjects such as neuroscience, computer science, and material engineering in one project, which means that the students can learn diverse knowledge and skills during the course.</p>
+</article>
+
+<article class="comment-bubble" title="2021 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>Very interesting content, enthusiastic and knowledgeable instructor, hands-on format, fitting of online structure of class.</p>
+</article>
+                
+
+
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices S2-2/2">
+	<p>The group project during the course is excellent and greatly contributes to the overall learning process.</p>
+</article>
+                   
+<article class="comment-bubble" title="2021 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders S3-1/2">
+	<p>The course provided a comprehensive overview of rehabilitation from both a neuroscience perspective and a software development perspective. The lectures were interesting and interactive, and the instructor was very dedicated and passionate about the material.</p>
+</article>
+               
+                
+<article class="comment-bubble" title="2019 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>Engaging professor and super interesting material. I loved the presentations given and how excited she was to answer questions and expand on them. Loved traveling to the lab and conducting our own research.</p>
+</article>
+
+
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders S1-2/2">
+	<p>The best aspects include the group work aspect of the class, which helped me meet more people from my class even though we couldn't be on campus. Also, the freedom to design our own projects was something I found very stimulating!</p>
+</article>
+
+                
+
+
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>Content was incredibly fun to learn and felt very useful and applicable.</p>
+</article>
+
+                
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>The teacher is super friendly and understanding. On top of that, the small size of the class leads to more interaction with her and your other classmates.</p>
+</article>
+
+
+<article class="comment-bubble" title="2021 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>The material was very interesting and the professor was really enthusiastic and willing to help.</p>
+</article>
+
+
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>The best aspects of this course are the immediate application of lecture onto homework and group projects, as well as the step-by-step process in relating topics of neurological disorders into the game we made.</p>
+</article>
+
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>I really enjoyed how engaging it was and how we were able to work as a team on a semester long project for the application of concepts we learned in early lectures.</p>
+</article>
+
+<article class="comment-bubble" title="2020 Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders">
+	<p>I enjoyed learning about the brain and being given the opportunity to be creative and apply what I learned to an actual project. The professor was very enthusiastic, encouraging, and excited about teaching us which made me feel more excited about the course.</p>
+</article>
+
+<article class="comment-bubble" title="2020 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>I really enjoyed the course structure of engaging lectures and group activities and projects. Furthermore, the Unity game we created had a lot of flexibility for us to be creative and apply what we had learned about rehabilitation of neurological disorders.</p>
+</article>
+
+<article class="comment-bubble" title="2020 Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders">
+	<p>I love that we were able to conduct an experiment and participate in it! The professor is supportive and encouraging. Our visits to the Kennedy Krieger Institute were inspiring and educational.</p>
+</article>
+
+
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices S4-1/2">
+	<p>It was nice to have what we were learning in class be seen and actually tested in order to have a better understanding of the equipment.</p>
+</article>
+
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices">
+	<p>It is a good class that exposes the students to many real-life labs. Furthermore, the things we learn and the coding in particular are very useful.</p>
+</article>
+
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices S5-1/2">
+	<p>Visits to labs and the medical campus helped me better understand the material we were learning in class. The coding and the COMSOL material was self-paced, so I never felt that I was being rushed or bored when working on those programs.</p>
+</article>
+<article class="comment-bubble" title="2019 Biomedical Engineering: Rehabilitation and Devices S5-2/2">
+	<p>Our teacher was very intelligent, kind, always listened to the students' questions and comments, and was patient with us when we did not understand.</p>
+</article>
+
+ 
 			</div>
+		</div>
+ 
+	</div>
 
-			
-        <!--------------------  Content  ------------------>
-		<div id="teachingpage-content" class="mainpage-content page-content">
-			
-			<!--------------------    ------------------>
-					
-			
- 			<div id="" class="section-header">Courses</div>
-			<div class="section-content"> 
+ 
+                <!-- AAA -->
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </details>
+                
+            
+            
+            
+            <details class="accordion"> <summary class="accordion-subheader section-subheader">Teaching Experience </summary>
+            
+            <p class="justify"> My teaching experience includes both the <strong class="emphasis">design and implementation of original curricula</strong> as well as the <strong class="emphasis">instruction of standard departmental courses</strong> in the fields of Biomedical Engineering and Neuroscience.  
+            </p> 
+             
+            
+            <a href="" data-buttonref="CoursesBtn"> 
+            <span class="paragraph-title">Original Curriculum Development & Lead Instruction</span></a>             
+            <ul>
+              <li> 
+                  <a href="" data-multilinkref="CoursesBtn coursesBridging #coursesBridging"> <strong class="emphasis">Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders</strong></a> (2020–2022)<br>
+                Intersession program. Taught 3 times; 11–13 students per section; 13–18 contact hours.
+              </li>
+              <li>
+                <a href="" data-multilinkref="CoursesBtn coursesEngineeringRehab #coursesEngineeringRehab"> 
+                    <strong class="emphasis">Engineering Rehabilitation of Motor, Neurologic and Psychiatric Disorders</strong></a> (2019–2021)<br>
+                HEART Program. Taught 5 times; 8–11 students per section; 13 contact hours each.
+              </li>
+              <li>
+                <a href="" data-multilinkref="CoursesBtn coursesBMERehabDev #coursesBMERehabDev"> 
+                    <strong class="emphasis">Biomedical Engineering: Rehabilitation and Devices</strong></a> (2019)<br>
+                Discover Hopkins Program. Taught twice; 11–14 students per section; 45 contact hours each.
+              </li>
+              <li>
+                <a href="" data-multilinkref="CoursesBtn coursesMiracles #coursesMiracles"> 
+                    <strong class="emphasis">Miracles of Modern Medicine – Guest Lecture: Neuroengineering, Movement, and Stroke</strong></a> (July 2018)<br>
+                Discover Hopkins Program. 20 students; 5 contact hours.
+              </li>
+            </ul> 
+ 
+            <span class="paragraph-title"> Lead Instruction & Assistance for Standard Departmental Courses</span>
+              
+            <ul>                  
+              <li>
+                  <a href="https://ei.jhu.edu/programs/bmei/" target="_blank"><strong class="emphasis">Biomedical Engineering Innovation</strong></a> (2020–2021)<br>
+                Lead Instructor. Taught twice; 25–31 students per section; 40 contact hours each.
+              </li>
+              <li>
+                  <a href="https://www.hopkinsmedicine.org/som/curriculum/genes-to-society/year-one/foundations-human-anatomy" target="_blank"><strong class="emphasis">Foundations of Human Anatomy</strong></a> (2019)<br>
+                Teaching Assistant. 12 students; 12 contact hours.
+              </li>
+            </ul> 
+            </details>
+            
+            
+            
+            
+            
+            <details class="accordion"> <summary class="accordion-subheader section-subheader">Teaching Development & Certificates</summary>   
+            <ul>
+              <li>
+                <a href="https://teachingacademy.jhu.edu/" target="_blank"><strong class="emphasis">Johns Hopkins Teaching Academy Certificate</strong></a> (2018–2021)<br>
+                Completed formal multi-phase training in evidence-based and inclusive university teaching practices, including coursework and a mentored teaching practicum
+                (<a href="/web/files/teaching/teachingAcademyRossi.pdf" target="_blank"><strong>Download Certificate</strong></a>).
+              </li>
 
-				<div class="image-row">
-		
+              <li>
+                  <a href="https://www.teachfirst.org.uk/" target="_blank"><strong class="emphasis">Teach First Training – Imperial College London</strong></a> (2014–2015)<br>
+                Participated in selected professional workshops focused on inclusive & effective pedagogy in diverse & underserved classrooms. 
+              </li>
+            </ul>
+            </details>
+
+
+
+                
+            
+            
+        </div>
+        
+<!--  ********* END OF TAB 1 ********* -->  
+            
+              
+ <!--  ********* TAB 2 ********* -->      
+        <!-- Courses materials/recordings -->
+        <div class="js-tab-content tab-sectioncontent section-content">              
+                
+<!-- JUMP TO LINKS / TABLE OF CONTENT:
+<a href="#course-bridging">Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders</a> 
+ <a href="#course-engrehab">Engineering Rehabilitation or Motor, Neurologic and Psychiatric Disorders</a> 
+ <a href="#course-bmerehabdev">Biomedical Engineering: Rehabilitation and Devices</a> --> 
 	
-					<div class="inline-text">						
+<!-- ACCORDION:
+<details open>
+    <summary> Title </summary>
+     content bla bla bla
+</details> --> 
 						 
-					<!--	<p class="justify">
-							<strong class="emphasis"></strong>
-							-->
-						<div class="section-panel-header">Bridging the Gap Between Engineering and Medicine: Rehabilitation of
-							Stroke, Parkinson and Other Neurologic Disorders</div>
-						<div class="section-panel">
-							<p class="justify">Did you know that 7% of US adults cannot walk 1/4 mile? Clinicians increasingly rely on engineers for developing rehabilitation techniques for neurologic disorders affecting movement. This course focuses on the engineering research underlying the development of clinical therapy interventions. You will have hands-on experience with equipment and protocols used for research and patient treatment during multiple visits to the Kennedy Krieger Institute – a world-renowned institution that studies and treats disorders of the nervous system. The course involves a group project component where students will design, carry out, and analyze data from their own experiment that uses a split-belt treadmill. <i><strong class="emphasis">For remote sessions:</strong> You will have hands-on experience with designing research protocols aimed at improving pandemic-time telehealth: you will create your own neurorehabilitation game in Unity based on cutting-edge neuroscience principles.</i></p>
-							
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/bridging-the-gap-between-engineering-and-medicine-2022?authuser=0" target="_blank">EN.580.118
-							(21) - Bridging the Gap Between Engineering and Medicine: Rehabilitation of
-							Stroke, Parkinson and Other Neurologic Disorders (Intersession 2022)</a></u></p>
+<!--	<p class="justify">
+        <strong class="emphasis"></strong>          -->
+                
+                
+    <!-- ******* TAB1 ********* COURSE ********* -->           
+            <details class="accordion"> <summary id="coursesBridging" class="accordion-subheader section-subheader"> Bridging the Gap Between Engineering and Medicine: Rehabilitation of Stroke, Parkinson and Other Neurologic Disorders
+             </summary> 
+                <p class="justify">Did you know that 7% of US adults cannot walk 1/4 mile? Clinicians increasingly rely on engineers for developing rehabilitation techniques for neurologic disorders affecting movement. This course focuses on the engineering research underlying the development of clinical therapy interventions. You will have hands-on experience with equipment and protocols used for research and patient treatment during multiple visits to the Kennedy Krieger Institute – a world-renowned institution that studies and treats disorders of the nervous system. The course involves a group project component where students will design, carry out, and analyze data from their own experiment that uses a split-belt treadmill. <i><strong class="emphasis">For remote sessions:</strong> You will have hands-on experience with designing research protocols aimed at improving pandemic-time telehealth: you will create your own neurorehabilitation game in Unity based on cutting-edge neuroscience principles.</i></p>
 
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/bridging-the-gap-between-engineering-and-medicine-2021?authuser=0" target="_blank">EN.580.118
-							(12) - Bridging the Gap Between Engineering and Medicine: Rehabilitation of
-							Stroke, Parkinson and Other Neurologic Disorders (Intersession 2021)</a></u></p>
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/bridging-the-gap-between-engineering-and-medicine-2022?authuser=0" target="_blank">EN.580.118
+                (21) - Bridging the Gap Between Engineering and Medicine: Rehabilitation of
+                Stroke, Parkinson and Other Neurologic Disorders (Intersession 2022)</a></u></p>
 
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/bridging-the-gap-between-engineering-and-medicine-2020?authuser=0" target="_blank">EN.580.118
-							(13) - Bridging the Gap Between Engineering and Medicine: Rehabilitation of
-							Stroke, Parkinson and Other Neurologic Disorders (Intersession 2020)</a></u></p>
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/bridging-the-gap-between-engineering-and-medicine-2021?authuser=0" target="_blank">EN.580.118
+                (12) - Bridging the Gap Between Engineering and Medicine: Rehabilitation of
+                Stroke, Parkinson and Other Neurologic Disorders (Intersession 2021)</a></u></p>
 
-						</div>
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/bridging-the-gap-between-engineering-and-medicine-2020?authuser=0" target="_blank">EN.580.118
+                (13) - Bridging the Gap Between Engineering and Medicine: Rehabilitation of
+                Stroke, Parkinson and Other Neurologic Disorders (Intersession 2020)</a></u></p>
+ 
+            </details>	
 
-						<div class="section-panel-header">Engineering Rehabilitation or Motor, Neurologic and
-							Psychiatric Disorders</div>
-						<div class="section-panel">
-							<p class="justify">This 10-week, 1-credit course dives into neurorehabilitation research, as part of the Hopkins Engineering Applications & Research Tutorials program targeted at freshmen. The course provides an overview of the engineering research into modern neurorehabilitation techniques for patients with motor, cognitive and psychiatric disorders. It will emphasize the role of engineers in the development of devices and in the investigation of therapy treatments that will be used in hospitals and clinics. Students will learn the material through lectures, interaction with patients and hands-on laboratory activities. The course involves a group project component where students will design, carry out, and analyze data from their own experiment that uses a split-belt treadmill. <i><strong class="emphasis">For remote sessions:</strong> In light of the pandemic, the course will include techniques for tele-rehabilitation. Students will design & implement their own tele-rehabilitation game in Unity, and they will test it and analyze data from classmates. Interaction with patients may be cancelled.</i></p>
-							
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/engineering-rehabilitation-2021?authuser=0" target="_blank">EN.500.111
-							(21) &amp; (39) - Engineering Rehabilitation or Motor, Neurologic and
-							Psychiatric Disorders (Fall 2021 - HEART)</a></u> </p>
+<!-- ******* TAB1 ********* COURSE ********* -->            
+             <details class="accordion"> <summary id="coursesEngineeringRehab" class="accordion-subheader section-subheader"> Engineering Rehabilitation or Motor, Neurologic and Psychiatric Disorders</summary> 
+                <p class="justify">This 10-week, 1-credit course dives into neurorehabilitation research, as part of the Hopkins Engineering Applications & Research Tutorials program targeted at freshmen. The course provides an overview of the engineering research into modern neurorehabilitation techniques for patients with motor, cognitive and psychiatric disorders. It will emphasize the role of engineers in the development of devices and in the investigation of therapy treatments that will be used in hospitals and clinics. Students will learn the material through lectures, interaction with patients and hands-on laboratory activities. The course involves a group project component where students will design, carry out, and analyze data from their own experiment that uses a split-belt treadmill. <i><strong class="emphasis">For remote sessions:</strong> In light of the pandemic, the course will include techniques for tele-rehabilitation. Students will design & implement their own tele-rehabilitation game in Unity, and they will test it and analyze data from classmates. Interaction with patients may be cancelled.</i></p>
 
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/engineering-rehabilitation-2020?authuser=0" target="_blank">EN.500.111
-							(27) &amp; (35) - Engineering Rehabilitation or Motor, Neurologic and
-							Psychiatric Disorders (Fall 2020 - HEART)</a></u></p>
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/engineering-rehabilitation-2021?authuser=0" target="_blank">EN.500.111
+                (21) &amp; (39) - Engineering Rehabilitation or Motor, Neurologic and
+                Psychiatric Disorders (Fall 2021 - HEART)</a></u> </p>
 
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/engineering-rehabilitation-2019?authuser=0" target="_blank">EN.500.111
-							(09) - Engineering Rehabilitation of Motor, Neurologic and Psychiatric
-							Disorders (Fall 2019 - HEART)</a></u></p>
-						
-						</div>
-						
-						<div class="section-panel-header">Biomedical Engineering: Rehabilitation and Devices</div>
-						<div class="section-panel">
-							<p class="justify">The course explores the biomedical research and tools used for rehabilitation and medical devices. In the first week, we will discuss rehabilitation of movement and psychiatric disorders, and the research into rehabilitation. In the second week, we will talk about devices such as neural prosthesis and smartphone aids for the visually impaired. 
-							Students will have first-hand experience with equipment during lab visits, and will interactively learn to design research questions and analyze data. With your group, you will collect and analyze your own kinematic data on a treadmill used for stroke rehabilitation research, and prepare a scientific paper on your findings using neuroscience and neurology principles. You will also design and analyze your own prosthetic device in COMSOL using mechanical and material engineering principles. </p>
-							
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/biomedical-engineering-rehabilitation-and-devices-2?authuser=0" target="_blank">EN.580.163(41)
-							- Biomedical Engineering: Rehabilitation and Devices - Session 2 (7/22-<span
-							class=GramE>8/2</span>/2019 - Discover Hopkins)</a></u></p>
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/engineering-rehabilitation-2020?authuser=0" target="_blank">EN.500.111
+                (27) &amp; (35) - Engineering Rehabilitation or Motor, Neurologic and
+                Psychiatric Disorders (Fall 2020 - HEART)</a></u></p>
 
-							<p class="teaching-link"><u><a
-							href="https://sites.google.com/view/cristinarossi/courses/biomedical-engineering-rehabilitation-and-devices?authuser=0" target="_blank">EN.580.163(61)
-							- Biomedical Engineering: Rehabilitation and Devices - Session 1 (6/24 -
-							7/5/2019 - Discover Hopkins)</a></u> </p>
-		
-						</div>
-					<!--	</p>	-->			 
-						
-					</div>					
-				</div>  	
-			</div>
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/engineering-rehabilitation-2019?authuser=0" target="_blank">EN.500.111
+                (09) - Engineering Rehabilitation of Motor, Neurologic and Psychiatric
+                Disorders (Fall 2019 - HEART)</a></u></p>
+ 
+            </details>	
+
+<!-- ******* TAB1 ********* COURSE ********* -->  
+
+             <details class="accordion"> <summary id="coursesBMERehabDev" class="accordion-subheader section-subheader"> Biomedical Engineering: Rehabilitation and Devices</summary> 
+                <p class="justify">The course explores the biomedical research and tools used for rehabilitation and medical devices. In the first week, we will discuss rehabilitation of movement and psychiatric disorders, and the research into rehabilitation. In the second week, we will talk about devices such as neural prosthesis and smartphone aids for the visually impaired. 
+                Students will have first-hand experience with equipment during lab visits, and will interactively learn to design research questions and analyze data. With your group, you will collect and analyze your own kinematic data on a treadmill used for stroke rehabilitation research, and prepare a scientific paper on your findings using neuroscience and neurology principles. You will also design and analyze your own prosthetic device in COMSOL using mechanical and material engineering principles. </p>
+
+    
+                <p class="teaching-link"><u><a href="https://sites.google.com/view/cristinarossi/courses/biomedical-engineering-rehabilitation-and-devices-2?authuser=0" target="_blank">EN.580.163(41)
+                - Biomedical Engineering: Rehabilitation and Devices - Session 2 (7/22-8/2/2019 - Discover Hopkins)</a></u></p>
+
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/biomedical-engineering-rehabilitation-and-devices?authuser=0" target="_blank">EN.580.163(61)
+                - Biomedical Engineering: Rehabilitation and Devices - Session 1 (6/24 -
+                7/5/2019 - Discover Hopkins)</a></u> </p>
+ 
+            </details>	
+                
+<!-- ******* TAB1 ********* COURSE ********* -->  
+
+             <details class="accordion"> <summary id="coursesMiracles" class="accordion-subheader section-subheader">Miracles of Modern Medicine: Neuroengineering, Motor & Stroke</summary> 
+                <p class="justify">
+                    This one-day course will offer an overview into the form of motor learning called “motor adaptation”, and its impact on modern neurorehabilitation techniques.
+
+                    Movement in humans is extremely complex, and surprisingly extremely flexible. However, damage to the brain can severely impact movement and its flexibility. Movement rehabilitation is extremely important after neurologic injury like stroke, but a lot is still unknown about the different neural mechanisms for movement.
+
+                    How are scientists tackling this problem? What does the future of neurorehabilitation look like?
+
+                    In this course, we will explore the role of different brain regions in human motor control. We will discuss what we already know as well as the type of research that is currently being done to understand what we still do not know. Through hands-on exposure to research equipment, we will explore how scientists are trying to take advantage of the neural circuits which are still intact after neurologic injury to develop better rehabilitation treatments. 
+                </p>
+
+                <p class="teaching-link"><u><a
+                href="https://sites.google.com/view/cristinarossi/courses/miracles-of-modern-medicine-neuroengineering-motor-stroke?authuser=0" target="_blank">AS.360.174 (56) - Miracles Of Modern Medicine: Neuroengineering, Motor & Stroke (Summer 2018)</a></u></p>
+ 
+ 
+            </details>	
+            
+            
+            
+        </div>
 			
-			
-			<div id="" class="section-header">Unity Tutorials</div>
-			<div class="section-content"> 
-				<br>
-
-				<iframe 
-					src="https://jh.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=1ab12d83-710e-49ac-8726-aca701798fbd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" 
-					width="100%" 
-					height="480" 
-					frameborder="0" 
-					allowfullscreen>
-				</iframe>
-
-			</div>
-			  
+        
+ 
+ <!--  ********* END OF TAB 2 ********* -->  
+            
+ <!--  ********* TAB 3 ********* -->      
 	
-		</div><!-- mainpage-content -->
+        <!-- Unity Tutorials -->
+        <div class="js-tab-content  tab-sectioncontent section-content">  
+            <p><strong class="emphasis">Before you start: </strong>&emsp;
+                1) <a class="teaching-unity-link" href="https://drive.google.com/file/d/1Vw_xNskl5ioL2U721mW0K1dW9xXTnfGu/view?usp=sharing" target="_blank">Unity installation</a>
+                2) <a class="teaching-unity-link"  href="https://drive.google.com/file/d/1OX9uKjHEHi-74TBxRc_EpzG4lf95FnzE/view?usp=sharing" target="_blank">Setting up a Unity License</a>
+                3) <a class="teaching-unity-link"  href="https://drive.google.com/file/d/1ryXif8ILj1ob6uZkj808hxxRJp5FwpHJ/view?usp=sharing" target="_blank">Reference Guide</a>
+                4) <a class="teaching-unity-link"  href="https://www.google.com/url?q=https%3A%2F%2Fdocs.unity3d.com%2FManual%2Findex.html&sa=D&sntz=1&usg=AOvVaw3g-qR2zTDV56hoBDe2Y3JM" target="_blank">Official Manual </a>
+            </p> 
 
-	</div><!-- mainpage-parent -->  
+            <iframe 
+                src="https://jh.hosted.panopto.com/Panopto/Pages/Embed.aspx?pid=1ab12d83-710e-49ac-8726-aca701798fbd&autoplay=false&offerviewer=true&showtitle=true&showbrand=false&start=0&interactivity=all" 
+                width="100%" 
+                height="480" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+
+		 
+			  
+        </div>
+        
+ <!--  ********* END OF TAB 3 ********* -->  
+            
+ <!--  ********* TAB 4 ********* -->      
+	
+        <!-- ( tab) -->
+        <div class="js-tab-content  tab-sectioncontent section-content"> 
+             
+                  
+<!-- ******* RESEARCH ********* -->  
+             <details class="accordion"> 
+                <summary class="accordion-subheader section-subheader">Research Process & Scientific Writing</summary> 
+                <p class="justify">Practical resources written by me & others to help younger researchers get started with the research process, and more seasoned researchers keep up with best practices.</p>
+                 
+                 <span class="paragraph-title">Search & Read Literature</span> 
+                 <ul class="teaching-resources">
+                    <li class="teaching-link"><a href="https://drive.google.com/file/d/1Okp-D-34l0ayIkVbVMyLeMS3iF1i-Vvh/view" target="_blank"> <i>How to search for scientific papers</i> (by Cris Rossi)</a><span class="teaching-link-note">Official databases & what to do if you do not currently have access.</span></li>  
+                 </ul>
+                 
+                 
+                 <span class="paragraph-title">Data analysis for research</span> 
+                 <ul class="teaching-resources">
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/pi1kwdrk29z13qemeqtcn/classday3.pptx?rlkey=jxh7wbtl2aby30zab4bmgs02o&e=1&dl=0" target="_blank"><i>Within-participant design - data analysis basics</i> (by Cris Rossi)</a><span class="teaching-link-note">What is a valid outcome measure? What are basic ways to look at within-participant change in that measure?</span></li>  
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/ihul10e7nhzwic7bq5w7d/outcome-measures.docx?rlkey=m98j3eg65x9g3alutz4wj27tx&st=pjenulih&dl=0" target="_blank"><i>Outcome measure Worksheet</i> (by Cris Rossi)</a><span class="teaching-link-note">Steps to ensuring we consider all aspects of our outcome measure during the research planning stage.</span></li>  
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/xxoiow7xzio9mq2sfkfrv/Excel-instructions.pdf?rlkey=r2ylf8lb4ajji57hgtuvm8723&e=1&dl=0" target="_blank"><i>Plots, Statistical Analysis & Presentation of your data - The Basics</i> (by Cris Rossi)</a><span class="teaching-link-note">The Most basic analysis for single participant repeated measure design.</span></li>
+                 </ul>
+                 
+                 <span class="paragraph-title">Scientific Writing</span> 
+                 <ul class="teaching-resources">
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/tqm8b97l9ayuadtimg8ca/report.pptx?rlkey=nuc63tfuj17ye0lqhsp10cbev&e=1&dl=0" target="_blank"><i>The Basics of Scientific Papers</i> (by Cris Rossi)</a><span class="teaching-link-note">Overview of the different sections (Introduction, Methods, Results, Discussion, & variants), and exercise to write basic content in each.</span></li> 
+                    <li class="teaching-link"><a href="http://people.physics.illinois.edu/celia/lectures/numbers.pdf" target="_blank">Celia M. Elliott. <i>Writing Numbers in Technical Documents.</i> 2017.</a><span class="teaching-link-note">Specific guidelines on how to report numbers and numerical values in scientific writing.</span></li>   
+                 </ul>
+                 
+                <span class="paragraph-title">Scientific Conferences</span>
+                 <ul class="teaching-resources">
+                    <li class="teaching-link"><a href="https://drive.google.com/file/d/13PoZwNxX6QPROysCKIJHAaC7HUvmJ6AX/view?usp=drive_link" target="_blank"><i>Navigating poster sessions & Networking</i> (by Cris Rossi)</a><span class="teaching-link-note"></span></li> 
+                 </ul>
+                  
+                  
+            </details>	    
+            
+            
+            
+                   
+<!-- ******* Tech / coding ********* -->  
+             <details class="accordion">                 
+                <summary class="accordion-subheader section-subheader">Coding & Technical </summary> 
+                <p class="justify">MATLAB, Unity, Comsol, & more. </p>
+                   
+                <span class="paragraph-title">MATLAB</span>
+                 <ul class="teaching-resources">                       
+                    <li class="teaching-link"><a href="https://drive.google.com/file/d/11pNou0Nxe29ViorQzosPmRSondI7HHMz/view" target="_blank"><i>MATLAB for data analysis - Basic Reference Sheet</i> (by Cris Rossi)</a><span class="teaching-link-note">Basics of printing text data & displaying plots. Basics of numerical analysis: comparing numerical values, using arrays, if & loops.</span></li>  
+                    <li class="teaching-link"><a href="https://drive.google.com/file/d/1Z3ULCzgJYhrjgQdmFcYfDtVIKHxTmtBN/view" target="_blank">David Houcque<i>INTRODUCTION TO MATLAB FOR ENGINEERING STUDENTS</i></a><span class="teaching-link-note"> (Tutorials) </span></li>   
+                 </ul>  
+                 
+                   
+                <span class="paragraph-title">COMSOL</span>
+                 <ul class="teaching-resources">                       
+                    <li class="teaching-link"><a href="https://drive.google.com/file/d/1FKmjdtszQNG8gFNlTt8-HgO9HU8fWqku/view?usp=sharing" target="_blank"><i> Intro to COMSOL </i> (by Cris Rossi)</a><span class="teaching-link-note">Getting started.</span></li>  
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/rgvhohh2e4n2kvgdlf43y/StressStrainAnalysis.pdf?rlkey=28x1i45loqckm4okrn37gcbuk&st=sk44a8cq&dl=0" target="_blank"> <i>COMSOL Stress Strain Analysis Basics</i> (by Cris Rossi)</a><span class="teaching-link-note">  </span></li>   
+                    <li class="teaching-link"><a href="https://drive.google.com/file/d/1g5FCaZ8-KXKe6L947GOJ2M6m-L8e963g/view" target="_blank"> <i>COMSOL Analyse your device</i> (by Cris Rossi)</a><span class="teaching-link-note">  </span></li>  
+                 </ul>  
+                      
+                <span class="paragraph-title">UNITY</span>
+                 <ul class="teaching-resources">    
+                     <li class="teaching-link"><a class="teaching-unity-link" href="https://drive.google.com/file/d/1Vw_xNskl5ioL2U721mW0K1dW9xXTnfGu/view?usp=sharing" target="_blank">Unity installation (by Cris Rossi)</a></li>
+                    <li class="teaching-link"><a class="teaching-unity-link"  href="https://drive.google.com/file/d/1OX9uKjHEHi-74TBxRc_EpzG4lf95FnzE/view?usp=sharing" target="_blank">Setting up a Unity License (by Cris Rossi)</a></li>
+                    <li class="teaching-link"><a class="teaching-unity-link"  href="https://drive.google.com/file/d/1ryXif8ILj1ob6uZkj808hxxRJp5FwpHJ/view?usp=sharing" target="_blank">Reference Guide (by Cris Rossi)</a></li>
+                    <li class="teaching-link"><a class="teaching-unity-link"  href="https://www.google.com/url?q=https%3A%2F%2Fdocs.unity3d.com%2FManual%2Findex.html&sa=D&sntz=1&usg=AOvVaw3g-qR2zTDV56hoBDe2Y3JM" target="_blank">Official Manual </a></li>
+                    <li class="teaching-link"><a class="teaching-unity-link"  href="" data-buttonref="UnityBtn" target="_blank">Video Tutorials (by Cris Rossi)</a></li>
+                     </ul>  
+            </details>	
+            
+<!-- ******* STATS ********* -->  
+             <details class="accordion">                 
+                <summary class="accordion-subheader section-subheader">Statistical Methods for data Analysis</summary> 
+                <p class="justify">Useful methodological resources, mostly written by other individuals. Highly recommended as resources to support robust research methodologies.</p>
+                   
+                <span class="paragraph-title">Bootstrapping & Confidence Intervals</span>
+                 <ul class="teaching-resources">
+                     <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/xqrlk9yz872xgemsafz43/501_02_Efron_Introduction-to-the-Bootstrap.pdf?rlkey=ekjnoukedetxyxjmt04wn4grg&st=rimjvbsf&dl=0" target="_blank">Efron, B., & Tibshirani, R.J. <i>An Introduction to the Bootstrap</i>. Chapman and Hall/CRC. 1994.</a><span class="teaching-link-note">Great for learning bootstrapping - how to implement it in code, how to choose the appropriate implementation for your research question & data, and how to interpret your results statistically.</span></li>  
+                 </ul>
+                 
+                <span class="paragraph-title">Linear & Non-linear models, Random & Mixed Effects</span>
+                 <ul class="teaching-resources">
+                     <li class="teaching-link"><a href="https://www.ncss.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Mixed_Models-Repeated_Measures.pdf" target="_blank"><i>Mixed Models – Repeated Measures.</i> NCSS Statistical Software , Chapter 222.</a><span class="teaching-link-note">Intuitive introduction to repeated-measures designs and mixed models.</span></li> 
+                     <li class="teaching-link"><a href="http://users.stat.umn.edu/~helwig/notes/lmer-Notes.pdf" target="_blank">Nathaniel E. Helwig. <i>Linear Mixed-Effects Regression</i>. Slides, 2017.</a><span class="teaching-link-note">Intuitive introduction to repeated-measures designs, ANOVA & Linear Mixed-Effects Regression.</span></li> 
+
+                     <li class="teaching-link"><a href="https://ms.mcmaster.ca/canty/teaching/stat3a03/Lectures7.pdf" target="_blank"><i>Weighted least squares</i>McMaster University › teaching › Lectures 7.</a><span class="teaching-link-note">How to Implement Weighted Least Squares regression.</span></li>  
+
+                     <li class="teaching-link"><a href="https://www.researchgate.net/profile/Bill-Venables/publication/224817420_Modern_Applied_Statistics_With_S/links/5f5481f092851c250b96c0a9/Modern-Applied-Statistics-With-S.pdf?origin=publicationDetail&_sg%5B0%5D=GvwVUyqB4iZRreg6VpXOmZH8wxLJVY3rVEPhnZFsqs2ufrUz2xHbuhyCgwUSW72Lw3Mdw0U-q0Re0-0cp3p98Q.mEiT4r9b4zyt8RvzLerFye0_MbO_gyqgCFeHe9waynd-ypKzROMUV4fzyFTlm_d6No9OOcLtRd7018gu7c7E9A&_sg%5B1%5D=DHdgpS2V2JRjt51Pgg1Zgea3jEAxZJQe0qsJ1TS2mndmUp8oVSc-0zy_BABHZeGhN_OUk9DI4DE6lri9f5IwEP47WORXSPc_cAwaLb--9p8q.mEiT4r9b4zyt8RvzLerFye0_MbO_gyqgCFeHe9waynd-ypKzROMUV4fzyFTlm_d6No9OOcLtRd7018gu7c7E9A&_iepl=&_rtd=eyJjb250ZW50SW50ZW50IjoibWFpbkl0ZW0ifQ%3D%3D&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6InB1YmxpY2F0aW9uIiwicGFnZSI6InB1YmxpY2F0aW9uIiwicG9zaXRpb24iOiJwYWdlSGVhZGVyIn19" target="_blank">Venables, Bill & Ripley, B. <i>Modern Applied Statistics With S.</i> Springer 2002.</a><span class="teaching-link-note">Great introduction to Random & Mixed Effects Models, including both linear, generalized linear and non-linear models. It also include explanations of confidence intervals as well as a section on how to perform bootstrapping on linear models. (Note that much of the S coding can be easily implemented in R).</span></li>  
+                     <li class="teaching-link"><a href="https://www.stat.berkeley.edu/~rabbee/s154/ISLR_First_Printing.pdf" target="_blank">James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. <i>An Introduction to Statistical Learning.</i> PDF. 1st ed. Springer Texts in Statistics. 2013.</a><span class="teaching-link-note">Great explanations on linear & non-linear models - in particual, inclduing logistic models and logistic regression. It also includes principal component analysis & support vector machines. Sections on smoothing methods like spline.</span></li> 
+                     <li class="teaching-link"><a href="https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf" target="_blank">Cosma Rohilla Shalizi. <i>Advanced Data Analysis from an Elementary Point of View.</i> Preprint</a><span class="teaching-link-note"> of book found at  <a href="https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/" target="_blank">https://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/</a>. Great explanations on regression & bootstrapping. Particularly recommend <a href="https://www.stat.cmu.edu/~cshalizi/uADA/12/lectures/ch12.pdf" target="_blank">Chapter on Logistic Regression</a>. </span></li>   
+                     <li class="teaching-link"><a href="https://www.researchgate.net/publication/236333095_A_goodness-of-fit_test_of_logistic_regression_models_for_case-control_data_with_measurement_error" target="_blank">Zhang, Biao. <i>A Chi-Squared Goodness-of-Fit Test for Logistic Regression Models Based on Case- Control Data</i> Biometrika , Sep., 1999, Vol. 86, No. 3, pp. 531-539. 1999. </a><span class="teaching-link-note">For learning when & how to implement Chi-Squared test in logistic regression.</span></li> 
+
+                 </ul>
+
+                <span class="paragraph-title">Stats & Maths Foundations</span>
+                 <ul class="teaching-resources">
+                     <li class="teaching-link"><a href="https://www.comp.nus.edu.sg/~cs4243/lecture/matrixdiff.pdf" target="_blank">Leow Wee Kheng. <i>Matrix Differentiation</i>. Class Slides from CS4243 Computer Vision and Pattern Recognition</a><span class="teaching-link-note"></span></li>                   
+                     <li class="teaching-link"><a href="https://faculty.washington.edu/yenchic/19A_stat535/Lec7_model.pdf" target="_blank">Yen-Chi Chen. <i>Model Selection and Prediction.</i> Lecture 7 in STAT 535: Statistical Machine Learning. Autumn 2019.</a><span class="teaching-link-note">Great explanation of AIC (Akaike information criterion) and BIC (Bayesian information criterion).</span></li> 
+                 </ul>
+                  
+                  
+            </details>	
+            
+            
+            
+<!-- ******* NEURO ********* -->  
+             <details class="accordion"> 
+                <summary class="accordion-subheader section-subheader">Neuroscience & Neurorehabilitation</summary> 
+                 
+                <p class="justify">The resources provided here are mostly books or articles written by other individuals. They cover topics ranging from basic neuroscience concepts to current research & technologies to principles of medical & physical therapy practice. I recommend these readings to anyone who wants to deepen their understanding of course material and/or explore academic/career directions!</p>
+                 
+                <span class="paragraph-title">Neuroscience Concepts</span>       
+                 <ul class="teaching-resources">
+                     <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/xauzxaumfd5kslwawihp6/Kandel-Edition-5.pdf?rlkey=wkp7qdvkx30e78tx4fradjmgn&st=ez6bv54m&dl=0" target="_blank">Kandel, Eric R., et al., editors. <i>Principles of Neural Science.</i> 5th ed., McGraw Hill Medical, 2013</a><span class="teaching-link-note">Gold standard, primary textbook for neuroscience education. It is a comprehensive resource explaining established knowledge about our nervous system and how it links to behavior. (Note that the link is for the 5th edition - not the latest edition)</span></li>                  
+                     <li class="teaching-link"><a href="https://www.basicknowledge101.com/pdf/Sensory%20and%20Motor%20Tracks%20CNS.pdf" target="_blank">Steven Bassett. <i>The Nervous System: Sensory and Motor Tracts of the Spinal Cord.</i> Lecture Presentations, Southeast Community College. Lincoln, Nebraska. Pearson Education, Inc. 2012.</a><span class="teaching-link-note">Great intuitive introduction to neuroscience of the sensorimotor system.</span></li>
+                     
+                     
+                     <li class="teaching-link"><a href="https://www.educaplay.com/learning-resources/6845168-en_500_111_hw1.html" target="_blank"><i>Neuroscience Basics - Memory Game</i> (by Cris Rossi)</a><span class="teaching-link-note"> </span></li>
+                     
+                     <li class="teaching-link"><a href="https://brainu.org/getting-virtual-neurons-running-your-device" target="_blank"><i>Virtual Neurons</i></a><span class="teaching-link-note">Neuron firing game/simulation.</span></li>
+                     
+                     <li class="teaching-link"><a href="https://www.brainfacts.org/3d-brain#intro=true" target="_blank"><i>Brain Explorer</i> at BrainFacts.org</a><span class="teaching-link-note">Interactive exploration of different brain regions.</span></li>
+                 </ul>
+                 
+                <span class="paragraph-title">Research & Technology</span>  
+                 <ul class="teaching-resources">
+                     <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/mfel8ymjis30malo655ni/Gescheider-1997-The-Classical-Psychophysical-Methods-2.pdf?rlkey=wqoeyyh9gr2tfq4xwh3rjbhec&st=jr1txiot&dl=0" target="_blank">Gescheider, George A. <i>The Classical Psychophysical Methods.</i> In Psychophysics: The Fundamentals. Chapter 3. Lawrence Erlbaum Associates, 1997.</a><span class="teaching-link-note">Great introduction to psychophysical methods to test perception in the lab in human participants.</span></li>                 
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/4c9pz1myulyxny6q79cts/2016_Book_NeurorehabilitationTechnology.pdf?rlkey=gici7x0w3s4i57prw8sb5orl1&st=2y01eay0&dl=0" target="_blank">Reinkensmeyer, David J., and Volker Dietz, eds. <i>Neurorehabilitation Technology.</i> Second edition. Switzerland: Springer, 2016. Print. </a><span class="teaching-link-note">Comprehensive overview of current technological interventions to improve human movement after neurological injuries such as stroke & spinal cord injury. Covers technologies including brain stimulation, VR, robotic devices, brain-computer interfaces. </span></li>
+                    <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/l7dtd97rwk91drfh0onzd/Guide-to-Research-Techniques-in-Neuroscience-Matt-Carter-Jennifer-Shieh.pdf?rlkey=zu7m7hdvriif1eacyl7b102in&st=ptpk7fnk&dl=0" target="_blank">Carter, Matt, and Jennifer C. Shieh. <i>Guide to Research Techniques in Neuroscience.</i> Academic Press, 2010.</a><span class="teaching-link-note">Resource detailing current laboratory methods & research techniques in the field of neuroscience. Focuses mostly on animal research - yet, I still recommend it as a resource for us human researchers as it supports our understanding of relevant animal research literature.</span></li>
+                 </ul>
+                 
+                <span class="paragraph-title">Clinical Practice</span>
+                 <ul class="teaching-resources">
+                      <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/3cpo67vptg0klo6atx1e8/De-Jong-s-The-neurologic-Examination-7-th.pdf?rlkey=h0eg7fuidu0z2fm45ndv0d8gw&st=q9a4gb8m&dl=0" target="_blank">Campbell WW, Barohn RJ. <i>DeJong's The Neurologic Examination.</i> 8th ed. Wolters Kluwer; 2020.</a><span class="teaching-link-note">Clinical resource offering an in-depth understanding of neurologic exams. Includes detailed neurologic examination techniques with illustrations and guidelines for how to implement them, as well as an explanation of the underlying neuroanatomy and diagnoses. Covers different systems spanning sensory, motor, mental status.</span></li> 
+                 </ul>
+                
+                  
+            </details>
+            
+            
+<!-- ******* GAIT ********* -->  
+             <details class="accordion"> 
+                <summary class="accordion-subheader section-subheader">Gait & Biomechanics</summary> 
+                <p class="justify">Resources for analysing kinematic and kinetic measures in walking or other movements.</p>
+                 
+                 <span class="paragraph-title"></span>
+                 
+                 <ul class="teaching-resources">
+                     <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/lqmi4gwhjt726zg1uwiw3/biomechanics-and-motor-control-of-human-movement.pdf?rlkey=xgrgaesrd40sn16j9hbdlk2mr&st=lyxr7uxr&dl=0" target="_blank">Winter, D.A. Biomechanics and Motor Control of Human Movement. 4th Edition, John Wiley & Sons, Hoboken.2009.</a><span class="teaching-link-note"> In-depth resource to understand biomechanics of movement, including foundations & clinical applications, as well as how to collect & analyse biomechanics data. Particularly helpful to begin the process of analysing kinematic and kinetic measures in walking - it can serves a reference for expected data and practical resource for how to approach implementation & data analysis.</span></li> 
+                     <li class="teaching-link"><a href="http://drkwongolf.info/golf_biom.html" target="_blank">Brian Kwon. <i>Biomechanical Foundation.</i> Dr. Kwon's Golf Biomechanics Website</a><span class="teaching-link-note">Helpful intuitive introduction to biomechanics</span></li> 
+                     <li class="teaching-link"><a href="https://www.dropbox.com/scl/fi/88wgw9x1u325aefaduaxs/kinesiology_of_the_musculoskeletal_system.pdf?rlkey=xsb5c8so0j8b6gzetel2k3hrg&st=axwoldas&dl=0" target="_blank">Neumann, Donald A. <i>Kinesiology of the Musculoskeletal System.</i>Second Edition, Mosby/Elsevier, 2010.</a><span class="teaching-link-note">Comprehensive principles of kinesiology spanning both upper and lower limb muscles and joints - with applications to movement rehabilitation & showing examples of typical and atypical patterns. </span></li> 
+                     <li class="teaching-link"><a href="https://yunus.hacettepe.edu.tr/~serdar.aritan/anr420/ch5.pdf" target="_blank">Saunders N. Whittlesey and D. Gordon E. Robertson. <i>Two-Dimensional Inverse Dynamics.</i>Chapter 5 of Research Methods in Biomechanics.</a><span class="teaching-link-note">Great resource with step-by-step guidelines for implementing inverse dynamics computations, useful for bridging kinetics and kinematics & estimating forces and moments using kinematic data when no direct force measurement is avaialble. E.g., it can be useful for investigating forces/moments at knee or other joints not directly in contact with force plates.  </span></li> 
+                 </ul>
+               
+                  
+            </details>	
+            
+        </div>
+	
+        
+ <!--  ********* END OF TAB 4 ********* --> 
+        <!-- END TABS CONTENTS -->
+            
+    </div><!-- mainpage-content -->
+
+</div><!-- mainpage-parent -->  
 	 
 <!--	<script src="/web/general/page.js"></script> -->
 	

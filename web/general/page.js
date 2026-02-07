@@ -18,10 +18,9 @@ function defPagePopupWindow(url = ''){
 async function setupPage() {  
 	await setupDataContent(); 
     setupDataLinks(); 
-	setupDoiLinks();
-	setupImageCarousel(); 
+	setupDoiLinks(); 
 	setupPageTabs();
-	setupPageBubbles(); 
+    setupInteractive();
 	
 	
 	/* ----------------- HELPER FUNCTIONS ---------------- */	
@@ -40,9 +39,9 @@ async function setupPage() {
 				
 				
 				// Find the closest parent container with data-path
-				const tabParent = div.closest('.mainWindow-tabContentContainer[data-path]');
+				const tabParent = div.closest('.js-mainWindow-pageContent[data-path]');
 
-				// path <- data-path attribute of mainWindow-tabContentContainer parent
+				// path <- data-path attribute of js-mainWindow-pageContent parent
 				// or no base path (path='') if this does not exist
 				const path = tabParent ? tabParent.getAttribute('data-path') : '';  
 				
@@ -70,7 +69,7 @@ async function setupPage() {
 	
 	/* ───────────────────── Links ───────────────────── */ 
 	function setupDoiLinks() {
-		const doiLinks = document.querySelectorAll('a.paperdoi');
+		const doiLinks = document.querySelectorAll('a.js-paperdoi');
 		doiLinks.forEach(link => {
 			const text = link.textContent.trim();
 			const match = text.match(/^doi:\s*(10\.\S+)/i);
@@ -83,20 +82,17 @@ async function setupPage() {
 
 	async function setupDataLinks(){
 		// Links to Popups (<a> with  data-popupref attribute)
-		const popupLinks = document.querySelectorAll('a[data-popupref]');
-		console.log(popupLinks);
+		const popupLinks = document.querySelectorAll('a[data-popupref]'); 
 		popupLinks.forEach(link => {
 			link.addEventListener('click', async event => {
 				event.preventDefault(); // prevent href="" from navigating
 
 				// Find and opens frame
-				const url = link.getAttribute('data-popupref'); 
-
-
+				const url = link.getAttribute('data-popupref');  
+                
 				//  Create New Window 
 			   const targetWindow = await createWindow(defPagePopupWindow(url)); 
-
-
+ 
 				//  Load JSON content
 				// // Includes Files (html content, styles, scripts) from Json definitions
 				const jsonFiles = [ 
@@ -106,132 +102,101 @@ async function setupPage() {
 
 			});
 		});
-		
-		
-		// Links to Buttons (<a> with  data-buttonref attribute)
-		const buttonLinks = document.querySelectorAll('a[data-buttonref]');
-		console.log(document);
-		console.log(buttonLinks);
+        
+        
+        // Links to Buttons (<a> with  data-buttonref attribute)
+		const buttonLinks = document.querySelectorAll('a[data-buttonref]'); 
 		buttonLinks.forEach(link => {
 			link.addEventListener('click', async event => { 
 				event.preventDefault(); // prevent href="" from navigating
 
 				// Find & Click button
 				const buttonID = link.getAttribute('data-buttonref'); 
-				const button = document.getElementById(buttonID);
-				 
+				const button = document.getElementById(buttonID);				 
 				button.click();  
+			});
+		}); 
+		
+		
+		// Multiple-steps Links (<a> with  data-multilinkref attribute)
+		const multiLinks = document.querySelectorAll('a[data-multilinkref]'); 
+		multiLinks.forEach(link => {
+			link.addEventListener('click', async event => { 
+				event.preventDefault(); // prevent href="" from navigating
+
+				// Extracts Refs
+				const linkRefsString = link.getAttribute('data-multilinkref'); 
+                const linkRefs = linkRefsString.split(" "); // refs are separated by space
+                
+                linkRefs.forEach(linkref => {
+                    
+                    // Checks linkref type --> performs appropriate action:
+                    //  - If starts with # --> navigate to that location in space
+                    //  - Otherwise --> click button
+                	if (linkref.startsWith("#")) {
+                        const elID = linkref.slice(1); // removes starting #
+		                const el = document.getElementById(elID); // gets element
+                        
+                        // Scrolls to elements
+                        // (requestAnimationFrame waits for layout update,
+                        //  ensuring any prior relevant linkref has been completed)
+                        requestAnimationFrame(() => {
+                            el.scrollIntoView();
+                        });
+                    } else {                         
+                        const button = document.getElementById(linkref);
+                        button.click();  // clicks button with ID = linkref
+                    }
+                 
+                });
 
 			});
 		});
 	}
 	
 	
-	
-	/* ───────────────────── Image Carousel ───────────────────── */ 
-	function setupImageCarousel(){   
-		document.querySelectorAll('.carousel-container').forEach(container => {
-
-			console.log(container);
-			const slides = Array.from(container.querySelectorAll('.carousel-slide-img')).map(img => ({
-				image: img.src,
-				caption: img.dataset.caption || ''
-			}));
-
-			const displayImg = container.querySelector('.carousel-display');
-			const captionEl = container.querySelector('.carousel-header');
-			let currentSlide = 0;
-
-			const updateSlide = () => {
-				displayImg.src = slides[currentSlide].image;
-				captionEl.textContent = slides[currentSlide].caption;
-			};
-
-			container.querySelector('.prev-btn').addEventListener('click', () => {
-				currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-				updateSlide();
-			});
-
-			container.querySelector('.next-btn').addEventListener('click', () => {
-				currentSlide = (currentSlide + 1) % slides.length;
-				updateSlide();
-			});
-
-			updateSlide();
-		});
-
-	}
-
-	/* ───────────────────── Within-page Tabs ───────────────────── */ 
+	 /* ───────────────────── Within-page Tabs ───────────────────── */ 
 	function setupPageTabs() {		
-		document.querySelectorAll('.mainpage-parent').forEach(parent => { 
+		document.querySelectorAll('.js-mainpage-parent').forEach(parent => { 
 
+            /* tab buttons & content containers */
+			const tabs = parent.querySelectorAll('.js-tab-button');
+			const contents = parent.querySelectorAll('.js-tab-content');
+            
 			/* opens tab when clicking on the tab button */
-			const tabs = parent.querySelectorAll('.tab-button');
-			const contents = parent.querySelectorAll('.tab-content');
 			tabs.forEach((tab, index) => {
-				tab.addEventListener('click', () => {
-					tabs.forEach(t => t.classList.remove('active'));
-					contents.forEach(c => c.classList.remove('active'));
-					tab.classList.add('active');
-					contents[index].classList.add('active');
+				tab.addEventListener('click', () => { 
+                    handleTabSelection(index);                     
 				});
 			}); 
 
 			/* resets tabs when changing page */ 
-			document.querySelectorAll('.toprow-tabbutton').forEach(pagebtn => { 
-				pagebtn.addEventListener('click', () => {
-					tabs.forEach(t => t.classList.remove('active'));
-					contents.forEach(c => c.classList.remove('active'));
-					tabs[0].classList.add('active');  // reset = open first tab
-					contents[0].classList.add('active');
-				});
-				
+			document.querySelectorAll('.js-mainWindow-pageHeader').forEach(pagebtn => { 
+				pagebtn.addEventListener('click', () => { 
+                    handleTabSelection(0);                     
+				});				
 			});
-		});
-		 
+            
+            /* helper function to change tab */ 
+            function handleTabSelection(index) { 
+                
+                // if there are tabs in "parent" page 
+                if (tabs.length != 0) { 
+                    
+                    // close all tabs 
+                    tabs.forEach(t => t.classList.remove('jscs-tab-active'));
+                    contents.forEach(c => c.classList.remove('jscs-tab-active')); 
+
+                    // open only index tab
+                    tabs[index].classList.add('jscs-tab-active');  
+                    contents[index].classList.add('jscs-tab-active'); 
+                }
+            }
+            
+		}); 
+        
 	}
 
-	/* ───────────────────── Bubbles ───────────────────── */ 
-	function setupPageBubbles() {		
-		document.querySelectorAll('.mainpage-parent').forEach(parent => {   
-			
-			/* expands bubble when clicking on it */
-			const bubbles = parent.querySelectorAll('.bubble');
-			bubbles.forEach(bubble => {
-				bubble.addEventListener('click', () => {
-					bubbles.forEach(b => b.classList.remove('expanded'));
-					bubble.classList.add('expanded');
-					document.body.style.overflow = 'hidden';
-				});
-			});
-
-			/* closes bubble when clicking x */
-			const closeButtons = parent.querySelectorAll('.close-btn');
-			closeButtons.forEach(btn => {
-				btn.addEventListener('click', e => {
-					e.stopPropagation();
-					bubbles.forEach(b => b.classList.remove('expanded'));
-					document.body.style.overflow = '';
-				});
-			});
-			
-
-			/* closes bubble when clicking outside */
-			document.body.addEventListener('click', (e) => {
-				if (!e.target.closest('.bubble.expanded') && !e.target.classList.contains('close-btn')) {
-					bubbles.forEach(b => b.classList.remove('expanded'));
-					document.body.style.overflow = '';
-				}
-			}); 
-
-		});
-
-	}
-		
-
-
-    
 	
 	// // end of function block // //
 	

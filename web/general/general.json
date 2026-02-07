@@ -5,7 +5,8 @@
 			"general.js" 
 		],   
 		"main":[  
-			"page.js"
+			"page.js",
+			"interactive.js"
 		]  
 	},
     "css": {   
@@ -13,16 +14,9 @@
         	"general.css"
     	],
 		"main":[
-        	"page.css"
-		],
-		"guide":[
-			"guide.css"		
-		]
-	},
-	"scopedScripts": {  
-		"guide":[
-			"guide.js"			
-		]
+        	"page.css",
+			"interactive.css"
+		] 
 	} 
 }
  

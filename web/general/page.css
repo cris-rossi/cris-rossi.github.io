@@ -1,80 +1,39 @@
+/* |===============================================| */
+/* |                                               | */
+/* |    General Page Setup (below top row tabs)    | */
+/* |                                               | */
+/* |===============================================| */
+
+
+
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+/* ----------- General & Main Container ---------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+/* *
+    --> .mainpage-parent is the dynamic container for each page (home, about, research... pages)
+
+    --> Upon clicking a tab in the top row (outside of .mainpage-parent), .mainpage-parent is places inside the static parent container .mainWindow-pageContent (defined in index.css)
+    
+    --> Each .mainpage-parent contains 2 parts:
+        1) .across-page-banner: the bubble at the top of the page that is shared across pages
+        2) .mainpage-content: the container with content specific to each page 
+* */
  
-
-body { 
-	margin: 0;
-	padding: 0;  
-}
-
 .mainpage-parent {
 	max-width: 960px;
 	margin: 0 auto;
-	padding:  0rem 1.5rem;
-	
-	line-height: 1.6;
-	/*font-family: sans-serif;
-	margin: 2rem;*/
- 
-}
-
-/* Top Row Text */
-.mainpage-parent .mainpage-top-row { 
-	/*width: 100%;*/
-	color: var(--emphasis-darker);
-	font-weight: 600;
-	/*padding: 0.5rem;*/
-	text-align: center; 
-	font-size: 2.5rem;
+	padding:  0rem 1.5rem;	
 	line-height: 1.6; 
-	margin-top: 1.2em;
- /*
-    flex: 0 0 100%; */
-	
-	
-	display: flex;               /* puts image and text side-by-side */
-	align-items: center;         /* vertical centering */
-	gap: 4rem;                   /* optional spacing between img & text */ 
 }
-
-.mainpage-parent .mainpage-top-row img{  
-	transition: filter 0.3s ease, box-shadow 0.3s ease;
-	height: auto;
-	
-	flex: 1 1 0;            /* grow = 1, shrink = 1, base = 0            */
-	max-width: 100%;        /* stay inside parent                        */
-	object-fit: cover;      /* trims gracefully if the row becomes short */
-	min-width: 0;           /*  lets it shrink to fit parent */
-}
-.mainpage-parent .mainpage-top-row img:hover {
-	filter: brightness(110%) saturate(120%);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.mainpage-parent .mainpage-top-row p{ 
-    margin-block-end: 0.2em;
-}
-
- 
-
-.mainpage-top-row .toprow-namepronouns {
-	flex: 0 0 auto;         /* don't grow; use intrinsic width  */
-	text-align: center;        
-	line-height: 1.4;
-}
-
-.toprow-name {
-	white-space: nowrap;       
-}
-
-.toprow-pronouns  {
-	font-size: 0.9em;          
-}
-
 
 
 /* ----------------------------------------------- */
-/* ----------------- Alert Banner ---------------- */
 /* ----------------------------------------------- */
-
+/* ------------- Shared Alert Banner ------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
 .mainpage-parent .across-page-banner {
 	text-align: justify;
     text-justify: inter-word;
@@ -100,104 +59,32 @@ body {
   text-decoration: none;
 }
 
-/* ----------------------------------------------- */
-/* -------------- Table of Contents -------------- */
-/* ----------------------------------------------- */
 
 
-/*  On‑this‑page navigation */
-.mainpage-parent .on-this-page { 
-	background: var(--bground-lightest);
-	border-left: 3px solid var(--emphasis-color);
-	padding: 0.5rem 1.5rem 0.8rem 1.5rem; 
-	font-size: 0.95rem;
-	line-height: 1.2;
-	box-shadow: 2px 2px 3px rgba(0, 50, 50, .18);
-	border-radius: 5px;
-	max-width: 30%;
-}
-
-/* Header bar that says “Contents” */
-.mainpage-parent .on-this-page h2 {
-	/* typography */
-	font-size: 1.1rem;
-	font-weight: 600;
-	letter-spacing: .4px;
-	color: #fff;                         /* text colour on the bar */
-
-	/* bar appearance */
-	background: var(--emphasis-color);     /* pick your brand colour */
-	padding: 0.45rem 1.5rem;             /* same side-padding as nav */
-	
-	/* pull the bar out to the nav’s edges */
-	margin: -0.5rem -1.6rem 0.6rem;      /* negate nav’s top/side padding */
-	
-	/* rounded top corners only */
-	border-radius: 5px 5px 0 0;
-}
-
-
-.mainpage-parent .on-this-page ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.mainpage-parent .on-this-page li + li {
-	margin-top: .4rem;
-}
-.mainpage-parent .on-this-page a {
-	text-decoration: none;
-	color: var(--emphasis-darker);
-}
-.mainpage-parent .on-this-page a:hover {
-	text-decoration: underline;
-}
-
-
-/* Sub Sections */
-/*  Top-level (section) links  –  bolder */
-.mainpage-parent .on-this-page > ul > li > a {
-	font-weight: 600;
-}
-
-/*  Sub-list container  –  indented & subtle vertical guide */
-.mainpage-parent .on-this-page ul ul {
-	margin-top: 0.25rem;      /* a bit closer to its parent line */
-	padding-left: 1.1rem;     /* visual indent */
-	border-left: 1px solid var(--border-light, rgba(0,0,0,.12));
-}
-
-/*  Sub-items */
-.mainpage-parent .on-this-page ul ul li {
-	margin-top: 0.25rem;
-	position: relative;       /* for the pseudo-bullet below */
-}
-
-/*  Sub-item bullet (en-dash) */
-.mainpage-parent .on-this-page ul ul li::before {
-	content: "";
-	position: absolute;
-	left: -0.75rem;
-	color: var(--emphasis-darker);
-	font-weight: 700;
-}
-
-/*  Sub-level links  –  slightly smaller & softer */
-.mainpage-parent .on-this-page ul ul a {
-	font-size: 0.92em;
-	color: var(--emphasis-darker);
-}
-
-
+ 
 
 /* ----------------------------------------------- */
-/* ------------ Content with Sections ------------ */
+/* ----------------------------------------------- */
+/* ------------ Page-Specific Content ------------ */
+/* ----------------------------------------------- */
 /* ----------------------------------------------- */
 
 .mainpage-parent .mainpage-content { 
 	margin-top: 1rem;
 } 
 
+
+/* ---------------------------------------------------- */
+/* -------- Section Headers  (normal and tab) --------- */
+/* ---------------------------------------------------- */ 
+/* * 
+    --> Section Headers for Sections WITHIN each page content
+    --> 2 Types:
+        1) Horizontal divider placed along the page (e.g. how you divide a book/paper section)
+        2) Tab-style listed at the top of the page, that dynamically shows 1 tab at a time   
+* */
+
+/* General Section Header style (both types) */
 .mainpage-parent .mainpage-content .section-header {
 	font-size: 1.6rem;
 	font-weight: bold;
@@ -206,8 +93,8 @@ body {
 	padding-bottom: 0.5rem;
 }
 
-/* section headers in the form of tabs  */
-.mainpage-parent .mainpage-content .tab-header {
+/* Tab-style Section Headers */ 
+.mainpage-parent .mainpage-content .tab-sectionheader-container { /* Container for tab headers  */
 	display: flex;
 	gap: 1rem;
 	margin-bottom: 2rem;
@@ -215,27 +102,43 @@ body {
 	font-size: 1.6rem;
     margin-top: 1.5em;
 }
-.mainpage-parent .mainpage-content .section-header.tab-button  {	
+.mainpage-parent .mainpage-content .tab-sectionheader-container .section-header.tab-sectionheader  { /* Additional style for tab headers  */
 	padding-left: 1rem;
 	padding-right: 1rem;  
 	cursor: pointer;  
 }
-.mainpage-parent .mainpage-content .section-header.tab-button:not(.active) {	
+.mainpage-parent .mainpage-content .tab-sectionheader-container .section-header.tab-sectionheader:not(.jscs-tab-active) {	/* Active tab headers  */
 	font-weight: normal;
 	border-bottom: none;
 }
+ 
+ 
+/* ------------------------------------------------------- */
+/* ----- Section Content Containers (normal and tab) ----- */
+/* ------------------------------------------------------- */
 
-/* specific styles for the first section header */ 
-.mainpage-parent .mainpage-content > .section-header:first-child { 
-	margin-top: 1.5em;
-}
-
-
+/* General (Shared) Section Content Container */
 .mainpage-parent .mainpage-content .section-content {
 	margin-bottom: 3rem;
 } 
+  
  
-.mainpage-parent .mainpage-content .section-content .section-panel-header {
+/* Tab Section Content: JS-CS Interface to toggle tabs */ 
+.mainpage-parent .mainpage-content .section-content.tab-sectioncontent {
+	display: none;
+}
+.mainpage-parent .mainpage-content .section-content.tab-sectioncontent.jscs-tab-active {
+	display: block;
+}
+  
+
+/* ---------------------------------------------------- */
+/* --- Section Sub-Headers  (normal and accordion) ---- */
+/* ---------------------------------------------------- */ 
+ 
+
+/* Normal Subheader */
+.mainpage-parent .mainpage-content .section-content .section-subheader {
 	font-size: 1.3rem;
 	font-weight: bold;   
 	color: var(--emphasis-darker);
@@ -244,473 +147,39 @@ body {
 	text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */     
 	margin-top: 3rem;
 }
-.mainpage-parent .mainpage-content .section-content .section-panel-header:first-child { 
+.mainpage-parent .mainpage-content .section-content .section-subheader:first-child { 
 	margin-top: 1em;
 }
-
-.mainpage-parent .mainpage-content .section-content .section-panel {
-	
-}
-
-.mainpage-parent .mainpage-content .section-content .section-panel .section-panel-title {  
-	font-weight: 500; 
-	font-style: italic;
-	color: var(--emphasis-color);    font-size: large; 
-    text-shadow: 1px 1px 2px rgba(0, 90, 90, 0.2);
-}
-
-
-
-
-h1, h2, h3 {
-	color: #2a4a6c;
-}
-details {
-	margin-top: 1rem;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	padding: 1rem;
-	background: #fff; 
-} 
-summary {
-	font-size: 1.1rem;
-	font-weight: bold;
-	cursor: pointer;
-}
-
-details.prerequisites:not([open]){
-	padding:0.7rem;
-	margin-top:0.5rem;			
-}
-
-details.prerequisites > summary {
-	color:  var(--emphasis-darker);
-}
-strong.prerequisites{			
-	color:  var(--emphasis-darker);
-}
-details.prerequisites:not([open]) > summary {
-	line-height: 0.1; 
-	font-size:15px; 
-}
-
-
-.section-options{
-	margin-top: 2rem;     			
-}
-
-
-
-
-/* ----------------------------------------------- */
-/* --------------------- Lists ------------------- */
-/* ----------------------------------------------- */
-/* Short items lists */
-.list-shortitems li::marker {
-	color: var(--emphasis-color);
-} 
-
-/* Long items lists */
-.mainpage-parent .mainpage-content .section-content .list-longitems,
-.mainpage-parent .mainpage-content .section-content .list-arrows{
-	list-style: none; /* remove default bullets */
-}
-.mainpage-parent .mainpage-content .section-content .list-longitems  {
-	padding-left: 1.2em; /* removes left indentation */	
-}
-
-.mainpage-parent .mainpage-content .section-content .list-longitems > li::before,
-.mainpage-parent .mainpage-content .section-content .list-arrows > li::before{
-	content: "➤"; /* custom bullet */
-	position: absolute;
-	margin-left: -1.2em;
-	color: var(--emphasis-color); /* bullet color */
-}
-
-.mainpage-parent .mainpage-content .section-content .list-longitems > li {
-	position: relative;
-	margin-bottom: 1.2em; /* space between points */
-	line-height: 1.4; /* line spacing within each point */
-}
-
-.mainpage-parent .mainpage-content .section-content .list-longitems > li p,
-.mainpage-parent .mainpage-content .section-content .list-longitems > li strong {
-	margin: 0; /* prevent extra spacing from tags */
-}
-
-/* Vertical space between consecutive <li> */
-li + li {
-	margin-top: 0.5rem;        
-}
-/*  Different space when the *preceding* <li> already ends with an image  */
-li:has(> img:last-child) + li {
-	margin-top: 1rem;      
-}
-
-ol.list-lessindent,
-ul.list-lessindent {   /* list */ 
-	padding-left: 1.5rem;  
-}
-
-
-ul.note-text{
-	list-style: none;
-	padding-left: 0;	
-}
-.note-text li::before {
-	content: "❋"; 
-	margin-right: 8px;
-}
-
-
-ul.list-asterisks,
-li.list-asterisks {
-	list-style: none; 
-	margin-left: -1.1em;
-}
-.list-asterisks > li::before,
-li.list-asterisks::before {
-	content: "❋";  
-} 
-
-
-/* ----------------------------------------------- */
-/* ------------- Expandable Bubbles   ------------ */
-/* ----------------------------------------------- */
-
-
-.mainpage-parent .mainpage-content .tab-content {
-	display: none;
-}
-.mainpage-parent .mainpage-content .tab-content.active {
-	display: block;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content p.justify {
-	text-align: justify;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid {
-	display: flex;
-	flex-wrap: nowrap;
-	gap: 1.5rem;
-	margin-top: 2rem;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble {
-	flex: 0 1 45%;
- 
-	background-color: #f9f9f9;
-	border-radius: 1rem;
-  	overflow: hidden;  
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	transition: all 0.4s ease;
-	position: relative;
-	transform-origin: center; 
-} 
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.rightbubble {
-    margin-left: auto;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.expanded {
-	padding: 1.5rem;
-	position: fixed !important;
-	top: 50% !important;
-	left: 50% !important;
-	transform: translate(-50%, -50%) scale(1.05) !important;
-	z-index: 1000;
-	width: 70vw;
-	/*max-width: 600px;*/
-	max-height: 90vh;
-	overflow-y: auto;
-	background: var(--bground-lighter);
-	border-radius: 1rem;
-	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-	animation: growBubble 0.3s ease-out;
-}
-
-
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover { 
-  position: relative;   /* lets us absolutely-position the header */
- /* max-height: 50vh; */    /* <= your limit */
-  overflow: hidden;     /* prevents spill-over */
-}
-
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover img {
-  display: block;       /* removes default inline-gap */
-/*  max-width: 100%; */     /* never wider than the container */
- /* max-height: 100%;  */   /* never taller than 30 vh */
-  width: auto;          /* preserve aspect-ratio */
-  height: auto;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;  /* show whole image; swap for 'cover' if you prefer cropping */ 
-	 
-  transition: filter 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover img:hover {
-	filter: brightness(115%) saturate(125%);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.expanded .bubble-cover img {
-	display: none;
-}
-
-
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-cover .section-panel-header{
-  position: absolute;
-  bottom: 20%; left: 0;   /* sit on top of the image */
-  width: 100%;
-  padding: .5rem .75rem;
-  text-align: center;
-  color: #fff;          /* readable over the picture */
-  background: rgba(0,0,0,.45);   /* subtle dark strip; tweak or remove */
-}
-
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .bubble-content {
-	display: none;
-	margin-top: 1rem;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble.expanded .bubble-content {
-	display: block;
-	animation: fadeIn 0.3s ease-in;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .close-btn {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	font-size: 1.2rem;
-	background: transparent;
-	border: none;
-	cursor: pointer;
-	font-weight: bold;
-	color: #999;
-}
-.mainpage-parent .mainpage-content .tab-content .section-content .bubble-grid .bubble .close-btn:hover {
-	color: #000;
-}
-
-/* @keyframes (custom name): creates a custom animation (referred to in indivudal styles above)  */
-@keyframes growBubble {
-	from {
-		transform: translate(-50%, -50%) scale(0.6);
-		opacity: 0;
-	}
-	to {
-		transform: translate(-50%, -50%) scale(1.05);
-		opacity: 1;
-	}
-}
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to { opacity: 1; }
-}
-/* ----------------------------------------------- */
-/* ------------- Shared Image Styles  ------------ */
-/* ----------------------------------------------- */
- 
-.mainpage-parent .mainpage-content .section-content .image-row{
-	display: flex;			/* put the four images on one line        */
-	justify-content: space-between;	/* spread any leftover width equally    */ 
-	gap: 1.5rem;			/*  space *between* the cards  */	
-	align-items: center; /* vertical center */
-} 
-
-.mainpage-parent .mainpage-content .section-content .image-row .inline-img { 
-	flex: 1 1 0;			/* each image gets an equal share of row */
-	min-width: 0;			/* prevents flex “overflow” weirdness    */
-
-	width: 100%;			/* fill the width it’s given by flexbox  */
-	height: auto;			/* let height scale from the width       */
-
-	object-fit: contain;		/* shrink proportionally without crop    */
-	transition: transform 0.2s ease; 
-}
-
-
-.mainpage-parent .mainpage-content .section-content .image-row .inline-img:hover {
-	transform: scale(1.05);
-}
-
-
-
-.mainpage-parent .mainpage-content .section-content .image-row .inline-text {
-	flex: 1 1 300px;			/* take the remaining width */
-} 
-
-
-/* Features Cards   */ 
-.features-grid { 
-}
-
-.features-grid .feature-card-img {
-	max-height: 50vh;		/* never taller than half the viewport   */ 
-} 
-
-
- /*  “Why MovementVR?” side-by-side layout for image */
-.why-row {					/* wrapper around image + text */ 
-	align-items: center;	
-}
-
-.why-row .why-img { 
-	max-width: 50%; 
-} 
  
 
- /* “What is MovementVR?” side-by-side layout for image */
-.what-row {					/* wrapper around image + text */ 
-	align-items: center;	
+/* * * ACCORDION * * */ 
+/* Accordion Container */
+.mainpage-parent .mainpage-content .section-content .accordion { 
+    margin: 0.5em;
+    padding: 0.5em 1em; /* Vertical Horizontal */     
+	border: 1px solid var(--solid-bright);
+	border-radius: 20px; 
+	background: var(--bground-lightest);     
 }
 
-.what-row .what-img { 
-	max-width: 50%; 
-} 
-
-
-.inline-icon{
-	height: 1.5em;
-	vertical-align: middle;
+/* Accordion Subheader 
+(modification to main Subheader .section-subheader of which it also inherits the properties) */ 
+.mainpage-parent .mainpage-content .section-content .accordion-subheader.section-subheader { 
+	font-size: 1.15rem;          
+	cursor: pointer;     
+	margin-top: 0em;  
+	margin-bottom: 0em;  
 }
-
-
-
-
-/* --------------Image Help Guides --------------------*/
-img.instruction-screenshot {
-	display: block;
-	margin: 1rem 0 2rem 0;
-	max-width: 600px;
-	max-height: 150px;
-	height: auto;
-	border-radius: 6px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-	border: 1px solid #ccc;
-	transition: transform 0.2s ease-in-out;
-}
-img.instruction-screenshot.smaller-max-width { max-width: 500px; }
-img.instruction-screenshot.smaller-max-height { max-height: 100px; }
-img.instruction-screenshot.larger-max-height  { max-height: 200px; }
-img.instruction-screenshot.largest-max-height { max-height: 300px; }
-img.instruction-screenshot.larger-max-dim  { max-width: 90%; max-height: 60vh; }
-img.instruction-screenshot.largest-max-dim  { max-width: 100%; max-height: 80vh; }
-
-
-
-
-/* --------------Image Carousels --------------------*/
+  
  
 
-.carousel-container { 
-	max-height: 80vh;
-	margin: 2rem auto;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	background: #fff;
-	overflow: hidden;
-}
-/* ---------- Image Carousels (only the lines marked NEW are added/edited) ---------- */
-
-.carousel-container { /* unchanged */ }
-
-/* 1 ─ Header text automatically scales down and wraps if it doesn’t fit */
-.carousel-header { 
-	padding: .5rem 1rem;                 /*   a little extra breathing room */
-	font-size: clamp(.8rem, 1.1vw, 1rem);/*   shrinks on demand, never smaller than .8 rem */
-	font-weight: bold;
-	text-align: center;
-	
-	/* make room for multi-line text instead of forcing a fixed height */
-	min-height: 4rem;                    /*  eeps current look for short captions */
-	height: auto;                        /*   grows when needed */
-	line-height: 1.25;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow-wrap: anywhere;             /*  – lets long words break cleanly */
-}
-
-/* 2 ─ Give every slide a consistent “viewport” height */
-.carousel-image-container {	  
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #fff;
-
-	height: 400px;                       /* fixed viewport height for all images */
-}
-
-.carousel-image-container img {
-	height: 100%;                        /*   always fills the viewport vertically */
-	width: auto;                         /*   preserves aspect ratio */
-	max-width: 100%;
-	object-fit: contain;
-	border-radius: 4px;
-}
- 
- 
-.carousel-controls {
-	background-color: #f0f0f0; 
-    text-align: center;
-    border-top: 1px solid #ddd;
-    display: flex
-;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.carousel-controls button {   
-    cursor: pointer;
-    padding: 0px;
-    border: none; 
-    font-size: xxx-large;
-     transition: transform 0.3s ease, color 0.3s ease;
-} 
-.carousel-controls button.next-btn:hover { 
-      transform: translateX(5px); 
-}
-.carousel-controls button.prev-btn:hover { 
-      transform: translateX(-5px); 
-}
-
-
-
 /* ----------------------------------------------- */
-/* ------------------- Links  -------------------- */
+/* ---- Section content: Layout/Text Styles  ----- */
 /* ----------------------------------------------- */
 
-a {  /* link */
-	color: var(--link-color); 
-}
 
-a.img-link {  /* link */
-	display: contents; 
-}
+/* * * TEXT PARAGRAPHS * * */
 
-
-a.button {
-	display: inline-block;
-	padding: 0.75rem 1.25rem; 
-	color: white;
-	text-decoration: none;
-	border-radius: 5px;
-	margin: 0.5rem 0;
-	background-color: var(--solid-bright);
-	font-weight: bolder;
-	font-size:large;
-} 
-
-a.movementvrlink{
-	color: inherit;
-}
-a.movementvrlink:hover{ 
-	text-shadow: 0.1px 0 darkcyan, -0.1px 0 darkcyan;
-}
- 
-/* ----------------------------------------------- */
-/* ----------- General - Layout Styles  ---------- */
-/* ----------------------------------------------- */
 p.justify{
 	color: 	var(--text-color); 
 	font-size: 16px;
@@ -718,40 +187,39 @@ p.justify{
     margin-block-start: 1.25em;
     margin-block-end: 1.75em;
 }
-p.justify.small-bottom-margin{ /*do not change - it mimicks continuation (end-start margin block)*/ 
+
+/* If the paragraphs have to be split into different divs, it creates additional vertical space between them - use this in the last paragraph in div to mimicks continuation (end-start margin block) [do not change values] */ 
+p.justify.small-bottom-margin{ 
     margin-block-end: 0.5em;	
 }
-
-.justify { /* paragraph */
-  text-align: justify;      /* spreads the words to reach both edges */
-  text-justify: inter-word; /* preferred algorithm (works in most modern browsers) */
-}
-.center {
-  text-align: center;   /* horizontally centers each line */
-}
-
-
-/* utility: a tighter line break */
-.small-br { 
-	margin-top: 3rem;    
-}
-.smaller-br { 
-	margin-top: 1.5rem;    
-}
-.smallest-br { 
-	margin-top: 0.5rem;    
+  
+/* Sub-Sub-header (ie just a paragraph title) */
+span.paragraph-title{ 
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0px; /* Slight spacing between characters for clarity */
+	text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */ 
+    text-decoration: underline;
+	color: var(--emphasis-color); 
+    
 }
 
+/* * *  LISTS  * * */ 
 
-/* ----------------------------------------------- */
-/* ------------ General - Text Styles  ----------- */
-/* ----------------------------------------------- */
+/* * * Bullet-Point Lists in Main Text Content                       (ul.bulletlist li) * * */
+/* Vertical space between consecutive <li> */
+.mainpage-parent .mainpage-content .section-content ul.bulletlist li + li{
+    margin-top: .5rem;
+} 
+  
 
-strong {
-	color: var(--emphasis-color);			
+
+/* * * BY-WORD TEXT STYLES * * */
+
+/* Custom emphasis class for highlighted words */
+.emphasis { 
+	color: var(--emphasis-color); 
 }
-
-/* Custom emphasis class for highlighted quotes */
 strong.emphasis { 
 	/*font-family: Georgia; 
 	font-size: 16px;*/
@@ -760,125 +228,77 @@ strong.emphasis {
 	/*text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1); */ /* Soft shadow for depth */ 
 	color: var(--emphasis-color); 
 }
-
-.negative {  
-	font-weight: 500; 
-	font-style: italic;
-	color: var(--negative-color);
-}
-
-
-.note-text{
-	font-size: smaller;
-	font-style: italic;
+ 
+/* * *  TEXT MODIFICATIONS  * * */ 
+.rotate-180 {
+	transform: rotate(180deg);
 }
 
  
-code.larger{
-	font-size: large;
-	font-weight: bolder;
-	letter-spacing: 0.02em;
-	padding: 0 3px;
+
+/* * *  LINKS  * * */ 
+
+a {  /* link */
+	color: var(--link-color); 
+    transition: filter 0.15s ease;
+}  
+
+a .callout-arrow,
+a.callout-arrow {
+    text-decoration: none;
+}
+
+a:hover {
+	filter: brightness(1.15);   /* lighter */
+	/* or */
+	/* filter: brightness(0.85);  darker */
+}
+ 
+
+
+
+/* ----------------------------------------------- */
+/* ------------- Inline Elements Row  ------------ */
+/* ----------------------------------------------- */
+ /* sets up row with inline objects
+   - image next to text
+   - images next to each other  
+   ...  */
+.mainpage-parent .mainpage-content .section-content .inline-el-row{
+	display: flex;			/* put the four images on one line        */
+	justify-content: space-between;	/* spread any leftover width equally    */ 
+	gap: 1.5rem; /*  space between img & text  */	
+	align-items: center; /* vertical center */ 
 } 
-code.larger.effect{
-	color: darkgreen;
-	text-shadow:
-		0.02px 0.02px 0 darkgreen,
-		-0.02px -0.02px 0 darkgreen;
-}
 
-.smaller{
-	font-size: smaller; 
-}
-.smaller-lineheight{ 
-	line-height: 0.9;
-}
+.mainpage-parent .mainpage-content .section-content .inline-el-row .inline-img { 
+	flex: 1 1 0;			/* each image gets an equal share of row */
+	min-width: 0;			/* prevents flex “overflow” weirdness    */
 
+	width: 100%;			/* fill the width it’s given by flexbox  */
+	height: auto;			/* let height scale from the width       */
 
-
- 
-/* ----------------------------------------------- */
-/* --------------- General Styles  --------------- */
-/* ----------------------------------------------- */
-
-.temp-hidden {
-	display: none;
+	object-fit: contain;		/* shrink proportionally without crop    */ 
+    
+	transition: transform 0.2s ease,
+                filter 0.3s ease, 
+                box-shadow 0.3s ease; 
+        
 }
 
 
-
-
-
-
- 
-/* ---------------------SEARCH --------------------*/
- 
-
-/* wrapper so search + contents sit side-by-side, each at its natural width */
-.helpPage-searchandcontents{
-    display:flex;              /* put the search bar and the <nav> next to each other */
-    flex-direction: column;
-    align-items:flex-start;
-    gap:1rem;                  /* a little space between them */  
-	
-	
-    position: sticky;                 /* STICKY */
-    top: 4rem;                        /* position offset for sticky  */
-
-    /* keep it from growing past the viewport height                     */
-    max-height: calc(100vh - 4rem);   /* header offset included   */
-    overflow: hidden;                 /* child <ul> will do the scrolling*/
-}
-
-/* SEARCH BAR ----------------------------------------------------------- */
-.help-search-container{
-    display:inline-flex;       /* keep input + button on one line */
-    align-items:center;
-    background:var(--emphasis-darker);
-   /* background:white;*/
-    border:2px solid var(--emphasis-darker);
-    border-radius:25px;
-    box-shadow:0 2px 6px rgba(0,0,0,.05); 
-    width:fit-content;         /* or 'auto' – lets the bar shrink-to-fit its contents */ 
-}
-
-.help-search-input{
-    border:0;
-    outline:0;
-    background:white;
-    width:auto;                /* keeps input only as wide as the text it holds */
-    max-width:20ch;            /* optional safety cap so it can’t grow forever */
-    padding:8px 10px;
-    border-radius:25px;      
-}
-
-.help-search-button {
-	background: none;
-	border: 0;
+.mainpage-parent .mainpage-content .section-content .inline-el-row .inline-img.clickable {
 	cursor: pointer;
-	padding: 6px;
-	border-radius: 4px;
-	color: white; /* Default color */
-	transition: color 0.2s ease, background-color 0.2s ease, transform 0.1s ease; 
 }
 
-.help-search-button:hover,
-.help-search-button:focus {
-	/*color: #ddd;   
-	background-color: rgba(255, 255, 255, 0.1);*/
-	transform: scale(1.05);
+.mainpage-parent .mainpage-content .section-content .inline-el-row .inline-img:hover {
+	transform: scale(1.05); 
 }
 
-.search-icon {
-	display: inline-block;
-	vertical-align: middle;
+
+
+.mainpage-parent .mainpage-content .section-content .inline-el-row .inline-text {
+	flex: 1 1 300px;			/* take the remaining width */
 } 
-/*.highlight { 
-	background-color: yellow; 
- }*/
-
-.highlight          { background: #fcf18d; padding: 0 1px; }
-.highlight.current  { background: #ffc04d; outline: 1px solid #cc7a00; }
 
  
-

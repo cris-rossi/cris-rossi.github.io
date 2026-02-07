@@ -1,0 +1,38 @@
+/* ----------------------------------------------- */
+/* ----------- First Line Image & Name ----------- */
+/* ----------------------------------------------- */ 
+
+/* Builds upon main .inline-el-row class 
+ (defined in page.css)
+ which sets up the basics for having a row with image next to text */
+.mainpage-parent .mainpage-content .section-content .inline-el-row.homepage-top-row {  
+	color: var(--emphasis-darker);
+	font-weight: 600;  
+	font-size: 2.5rem;
+	margin-top: 0.6em;  /* increase top margin */
+	gap: 4rem;   /* increase spacing between img & text */
+}
+ 
+/* image hover effects override  */
+.mainpage-parent .mainpage-content .section-content .inline-el-row.homepage-top-row .inline-img:hover {
+	filter: brightness(110%) saturate(120%);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transform: none; /* Overrides scale-on-hover of inline-el-row*/
+}
+ 
+ 
+/* Styles name-pronouns block */
+.mainpage-parent .mainpage-content .section-content .inline-el-row.homepage-top-row .toprow-namepronouns {
+	flex: 0 0 auto;         /* don't grow; use intrinsic width  */
+	text-align: center;        
+	line-height: 1.4;
+}
+
+.mainpage-parent .mainpage-content .section-content .inline-el-row.homepage-top-row .toprow-namepronouns .toprow-name {
+	white-space: nowrap;       
+}
+
+.mainpage-parent .mainpage-content .section-content .inline-el-row.homepage-top-row .toprow-namepronouns .toprow-pronouns  {
+	font-size: 0.9em;          
+}
+ 

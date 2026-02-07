@@ -1,0 +1,278 @@
+/* ----------------------------------------------- */ 
+/* ------------- Expandable Bubbles   ------------ */
+/* ----------------------------------------------- */
+
+/* * * BUBBLE GRID * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+
+/* * * BUBBLE * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble {
+	flex: 0 1 45%;
+ 
+	background-color: var(--bground-lightest-gray);
+	border-radius: 1rem;
+  	overflow: hidden;  
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: all 0.4s ease;
+	position: relative;
+	transform-origin: center; 
+} 
+
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble:hover {
+    transform: scale(1.1);
+}
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble.rightbubble {
+    margin-left: auto;
+}
+
+/* --> expanded <-- */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble.jscs-bubble-expanded {
+	--bubble-pad: 1.5rem;
+	padding: var(--bubble-pad); 
+	position: fixed !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) scale(1.05) !important;
+	z-index: 1000;
+	width: 70vw;
+	/*max-width: 600px;*/
+	max-height: 90vh;
+	overflow-y: auto;
+	background: var(--bground-lighter);
+	border-radius: 1rem;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+	animation: growBubble 0.3s ease-out;
+}
+
+
+/* * * BUBBLE COVER  * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .bubble-cover { 
+  position: relative;   /* lets us absolutely-position the header */
+ /* max-height: 50vh; */    /* <= your limit */
+  overflow: hidden;     /* prevents spill-over */
+}
+
+/* * * BUBBLE COVER --> IMAGE  * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .bubble-cover img {
+  display: block;       /* removes default inline-gap */
+/*  max-width: 100%; */     /* never wider than the container */
+ /* max-height: 100%;  */   /* never taller than 30 vh */
+  width: auto;          /* preserve aspect-ratio */
+  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* show whole image; swap for 'cover' if you prefer cropping */ 
+	 
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .bubble-cover img:hover {
+	filter: brightness(115%) saturate(125%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* --> expanded <-- */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble.jscs-bubble-expanded .bubble-cover img {
+	display: none;
+}
+
+
+/* * * BUBBLE COVER --> TEXT HEADER  * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .bubble-cover .bubble-subheader.section-subheader{
+  position: absolute;
+  bottom: 20%; left: 0;   /* sit on top of the image */
+  width: 100%;
+  padding: .5rem .75rem;
+     
+  /* font-size, font-weight, and letter-spacing are inherited from section-subheader */
+    
+  text-align: center;
+  color: var(--text-color-light); /* readable over the picture */
+    
+  background: rgba(0,0,0,.45);   /* subtle dark strip; tweak or remove */
+}
+
+
+/* * * BUBBLE CONTENT  * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .bubble-content {
+	display: none;
+	margin-top: 1rem;
+}
+
+/* --> expanded <-- */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble.jscs-bubble-expanded .bubble-content {
+	display: block;
+	animation: fadeIn 0.3s ease-in;
+}
+
+
+/* * * BUBBLE CLOSE BUTTON  * * */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .jscs-bubble-closebtn {
+    display: none;
+	position: sticky;
+	float: right; 
+	top: 0px;
+	right: 0px;
+	font-size: 1.2rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font-weight: bold;
+	color: var(--text-medium); 
+}
+/* --> expanded <-- */
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble.jscs-bubble-expanded .jscs-bubble-closebtn{
+    display: block;  /* makes the X visible */  
+    
+    /* positions it top-right accounting for bubble padding */ 
+    transform: translate(   
+		calc(var(--bubble-pad) / 2),
+		calc(var(--bubble-pad) / -2)
+	); 
+}
+.mainpage-parent .mainpage-content .tab-sectioncontent.section-content .bubble-grid .bubble .jscs-bubble-closebtn:hover {
+	color: var(--text-color);
+}
+
+
+
+
+/* * *  @keyframes (custom name): creates a custom animation (referred to in indivudal styles above)  * * */
+@keyframes growBubble {
+	from {
+		transform: translate(-50%, -50%) scale(0.6);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, -50%) scale(1.05);
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------- */ 
+/* -------------    Text Carousel     ------------ */
+/* ----------------------------------------------- */
+ 
+
+/* * * MAIN CONTAINER * * */
+.comment-carousel { 
+	border-top: 0.5px dashed var(--solid-bright-lighter); /* divider line from prev section */
+    padding-top: 1.5rem;
+}
+
+
+/* * * TITLE & ARROWS * * */
+/* Title & Arrows Container */
+.comment-carousel-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	margin-bottom: 0.75rem;
+}
+/* Title */
+.comment-carousel-title {
+	margin: 0;
+	font-size: 1.05rem;
+}
+/* Arrows */
+.comment-carousel-btn {
+	border: 1px solid rgba(0,0,0,0.18);
+	background: white;
+	border-radius: 10px;
+	padding: 0.35rem 0.6rem;
+	cursor: pointer;
+	line-height: 1;
+    font-size: large;
+}
+.comment-carousel-btn:hover {
+	background: rgba(0,0,0,0.04);
+}
+.comment-carousel-btn:not(.rotate-180):active {
+	transform: translateY(1px); 
+}
+.comment-carousel-btn.rotate-180:active {
+	transform: translateY(1px)
+	           rotate(180deg);
+}
+
+
+/* * * MAIN AREA w/ COMMENT BUBBLES * * */
+/* Container */
+.comment-carousel-viewport {
+	overflow: hidden; 
+}
+
+.comment-carousel-track {
+    --carousel-gap: 0.5rem;
+	display: flex;
+	gap: var(--carousel-gap);
+	will-change: transform;
+	transition: transform 450ms ease; 
+}
+
+/* 3 visible at a time (desktop-ish). Adjust with media queries below. */
+.comment-bubble {
+	flex: 0 0 calc((100% - 2 * var(--carousel-gap)) / 3);
+	background: white;
+	border: 1px solid var(--borders-light-gray);
+	border-radius: 50px; /* pill / bubble look */
+	padding: 0.6rem 0.6rem;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: center;
+	display: flex;             
+	align-items: center;        /* vertical center */
+	justify-content: center;    /* horizontal center */
+    flex-direction: column;
+    font-size: 0.95rem; 
+}
+
+.comment-bubble p {
+	margin: 0;
+	line-height: 1.35;
+}
+
+.comment-bubble footer {
+    display: none;
+	margin-top: 0.5rem;
+	font-size: 0.85rem;
+	opacity: 0.7;
+}
+
+
+/* Responsiveness: CSS breakpoints */
+/* Must match JS visibleCount() function,
+ --> How many items should be visible at once based on viewport width */ 
+@media (max-width: 980px) {
+	.comment-bubble { flex-basis: calc((100% - 1 * 0.75rem) / 2); }
+}
+
+@media (max-width: 620px) {
+	.comment-bubble { flex-basis: 100%; border-radius: 18px; }
+}
+ 

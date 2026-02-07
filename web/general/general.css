@@ -1,16 +1,10 @@
 /* General styles of the body for all windows */
 body {
-    margin: 0;  /* Overall margin for the main window */ 
-    /*'Nunito', 'Poppins',*/
+    margin: 0;  /* Overall margin for the main window */  
 	font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; 
-	 
-	/*font-style: normal;
-font-variant: normal;
-font-weight: 300;
-font-size: 20px;
-line-height: 1.67em;*/
-font-weight: 300;
-} 
+	  
+    font-weight: 300;
+}
 
 * {
     box-sizing: border-box; /* Include borders, padding etc... in element size */ 
@@ -19,26 +13,33 @@ font-weight: 300;
 
 /* *************  COLORS  ************* */
 :root{
+    /* grayscale */
 	--text-color: #212121;
+    --text-darkgray: #666;
+	--text-medium: #999;
+	--borders-light-gray: #e1e1e1;
+	--bground-lightest-gray: #f9f9f9;
+    --text-color-light: #fff;
+    
+    /* cyan scale */
 	--emphasis-darkest: #145555;
 	--emphasis-darker: #187171;
-	--emphasis-color: #1b7e7e; 
-	--negative-color: #bf0404; 
-	--link-color: #1a6fb4;  
-	--link-hover: #125c9b;  
+	--emphasis-color: #1b7e7e;  
 	--solid-bright: #28bdbd;  
+	--solid-bright-lighter: #b2ebf2;      
+	--bground-brighter: #e0f7fa;  
 	--bground-color: #e6f7f7;
 	--bground-lighter: #f7ffff;
-	--bground-lightest: #f9f9f9;
+    --bground-lightest: #fcffff;
+    
+    /* navy blue */
+	--link-color: #1a6fb4;  
+	--link-hover: #125c9b;  
+    --dark-navy: #003366; 
 }
  
 
-/* *************  GENERAL  ************* */
-.clickable {
-	cursor: pointer;
-}
-
-
+/* *************  GENERAL  ************* */ 
 .hidden {
   display: none !important;
 } 
