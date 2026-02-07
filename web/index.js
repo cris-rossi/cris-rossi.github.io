@@ -7,9 +7,9 @@
 const mainWindowTabDefinition = [
     { buttonText: 'HOME', htmlFileName: 'home', tooltip: '' }, 
     { buttonText: 'ABOUT ME', htmlFileName: 'about', tooltip: '' }, 
+    { buttonText: 'TEACHING', htmlFileName: 'teaching', tooltip: '' }, 
     { buttonText: 'RESEARCH', htmlFileName: 'research', tooltip: '' }, 
     { buttonText: 'TOOLS', htmlFileName: 'tools', tooltip: '' }, 
-    { buttonText: 'TEACHING', htmlFileName: 'teaching', tooltip: '' }, 
     { buttonText: 'CV', htmlFileName: 'cv', tooltip: '' }, 
 ];
   

@@ -268,11 +268,11 @@
 /* Responsiveness: CSS breakpoints */
 /* Must match JS visibleCount() function,
  --> How many items should be visible at once based on viewport width */ 
-@media (max-width: 980px) {
+/*@media (max-width: 980px) {
 	.comment-bubble { flex-basis: calc((100% - 1 * 0.75rem) / 2); }
 }
 
 @media (max-width: 620px) {
 	.comment-bubble { flex-basis: 100%; border-radius: 18px; }
 }
- 
+ */

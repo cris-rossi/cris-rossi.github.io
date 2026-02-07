@@ -21,6 +21,8 @@
         2) .mainpage-content: the container with content specific to each page 
 * */
  
+ 
+
 .mainpage-parent {
 	max-width: 960px;
 	margin: 0 auto;
@@ -186,6 +188,7 @@ p.justify{
 	line-height: 2em;   
     margin-block-start: 1.25em;
     margin-block-end: 1.75em;
+	text-align: justify;
 }
 
 /* If the paragraphs have to be split into different divs, it creates additional vertical space between them - use this in the last paragraph in div to mimicks continuation (end-start margin block) [do not change values] */ 

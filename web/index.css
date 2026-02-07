@@ -12,6 +12,7 @@
 /* Style the main body  */
 body { 
   /*  font-size: 15px;*/
+    min-width: 800px;
 } 
 
  :root{
@@ -28,6 +29,9 @@ html {
 	scroll-behavior: smooth;
 }
 
+html, body {
+	overflow-x: auto;   /* if viewport too small --> scroll */ 
+}
 
 /* --------------------------------------------------------- */
 /* ---- Top Row Container: Icon, Name, Navigation Tabs ----- */
@@ -43,7 +47,7 @@ html {
     align-items: center;  /* Center children items vertically */  
     justify-content: center; /* Center children items horizontally */
 	gap: 10px; /* Gap between children items */
-	padding: 5px 100px 5px 100px; /* top right bottom left */ 
+	padding: 5px 100px 5px 100px; /* top right bottom left, 5px 100px 5px 100px*/ 
 	
     border-bottom: 3px solid lightgray;    /* Adds a gray bottom border */  
 	
@@ -68,6 +72,7 @@ html {
     margin-right: auto;
     line-height: 1.15; 
 	cursor: pointer;
+    white-space: nowrap;
 }
 .mainWindow-pageHeader-Container .header-namepronouns .header-name {
     font-weight: 600;
@@ -109,6 +114,7 @@ html {
 				letter-spacing 0.2s ease, text-shadow 0.2s ease; 
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 	user-select: none;
+	white-space: nowrap;
 }
 
 
